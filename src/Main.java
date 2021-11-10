@@ -20,9 +20,29 @@ public class Main {
     }
 
     public static void createCars(ArrayList<Car> cars) {
-        Car opel = new Family("Family", "Opel", "Mantra", "Benzin", "02-1990", 10000,
+        //Family
+        Car toyota1 = new Family("Family", "Toyota", "Proace Cyty Verso Shuttle", "Benzin", "06-2021", 5000,
                 "5. gear manual", "Yes", "Yes", 7);
-        cars.add(opel);
+        cars.add(toyota1);
+        Car toyota2 = new Family("Family", "Toyota", "Verso", "Diesel", "02-2012", 171000,
+                "6. gear manual", "Yes", "Yes", 7);
+        cars.add(toyota2);
+        Car nissan1 = new Family("Family", "Nissan", "Qashqai", "Diesel", "02-2012", 152000,
+                "6. gear manual", "Yes", "Yes", 7);
+        cars.add(nissan1);
+        Car nissan2 = new Family("Family", "Nissan", "e-NV200 Evalia Premium", "Diesel", "05-2019", 46000,
+                "6. gear manual", "Yes", "Yes", 7);
+        cars.add(nissan2);
+        //Luxury
+        Car bentley = new Luxury("Luxury", "Bentley", "Continental GT", "Benzin", "02/2013", 40000, 5998, "Yes", "Yes", "Yes", "Black Leather");
+        cars.add(bentley);
+        Car rollsRoyce1 = new Luxury("Luxury", "Rolls-Royce", "Phantom", "Benzin", "06/2013", 20000, 6749, "Yes", "Yes", "Yes", "White Leather");
+        cars.add(rollsRoyce1);
+        Car rollsRoyce2 = new Luxury("Luxury", "Rolls-Royce", "Ghost", "Benzin", "05/2017", 22500, 6592, "Yes", "Yes", "Yes", "Brown Leather");
+        cars.add(rollsRoyce2);
+        Car porsche = new Luxury("Luxury", "Porsche", "Panamera Turbo S Executive", "Benzin", "09/2018", 34200, 3996, "Yes", "Yes", "Yes", "Black Leather");
+        cars.add(porsche);
+        //Sport
     }
 
     public static void runHonoluluCarRentalProgram() {
