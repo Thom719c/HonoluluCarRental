@@ -1,8 +1,10 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        //arrayUpdate();
+        ArrayList<Car>cars = new ArrayList<>();
+        FileProcessor.updateArrayList(cars);
         runHonoluluCarRentalProgram();
 
     }
