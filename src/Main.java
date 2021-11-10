@@ -4,12 +4,21 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        ArrayList<Car>cars = new ArrayList<>();
-        FileProcessor.updateArrayList(cars);
+        ArrayList<Car> cars = new ArrayList<>();
+        createCars(cars);
+        //FileProcessor.updateArrayList(cars);
+
         runHonoluluCarRentalProgram();
 
     }
-    public static void runHonoluluCarRentalProgram(){
+
+    public static void createCars(ArrayList<Car> cars) {
+        Car opel = new Family("Family", "Opel", "Mantra", "Benzin", "02-1990", 10000,
+                "5. gear manual", "Yes", "Yes", 7);
+        cars.add(opel);
+    }
+
+    public static void runHonoluluCarRentalProgram() {
         Scanner input = new Scanner(System.in);
         int honoluluCarRentalChoice = 0;
         while (honoluluCarRentalChoice != 3) {
@@ -29,7 +38,8 @@ public class Main {
             }
         }
     }
-    public static void cars(){
+
+    public static void cars() {
         Scanner input = new Scanner(System.in);
         int carMenuChoice = 0;
         while (carMenuChoice != 6) {
@@ -55,7 +65,7 @@ public class Main {
         }
     }
 
-    public static void rentals(){
+    public static void rentals() {
         Scanner input = new Scanner(System.in);
         int rentalChoice = 0;
         while (rentalChoice != 6) {
