@@ -5,11 +5,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Car> cars = new ArrayList<>();
+        ArrayList<Honolulu_Car_Rental> rentals = new ArrayList<>();
         createCars(cars);
+        createRentals(rentals);
         //FileProcessor.updateArrayList(cars);
 
         runHonoluluCarRentalProgram();
 
+    }
+
+    private static void createRentals(ArrayList<Honolulu_Car_Rental> rentals) {
+      Honolulu_Car_Rental customer1 = new Private_Rentals("Steve","Nybobvej",2500, "Valby", 45678798, 13234567, "SteveMcQueen@gmail.com",
+              106783593, "6/3/2018");
     }
 
     public static void createCars(ArrayList<Car> cars) {
