@@ -48,7 +48,7 @@ public class Main {
             input.nextLine();
             switch (carMenuChoice) {
                 case 1:
-                    carHandler.showCars();
+                    carHandler.showCars(input);
                     break;
                 case 2:
                     carHandler.addCarMenu(input);

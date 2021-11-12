@@ -52,10 +52,40 @@ public class CarHandler {
         return cars;
     }
 
-    public void showCars() {
-        //createCars();
-        for (Car s : cars) {
-            System.out.println(s + "\n********************************************************************************");
+    public void showCars(Scanner input) {
+//        for (Car s : cars) {
+//            System.out.println(s + "\n********************************************************************************");
+//        }
+        System.out.println("1. Show all \n2. Family car \n3. Luxury car \n4. Sport car \n5. Exit");
+        int showType = input.nextInt();
+        switch (showType) {
+            case 1: //10 inputs
+                for (Car s : cars) {
+                    System.out.println(s + "\n**************************************************");
+                }
+                break;
+            case 2: //11 inputs
+                for (Car s : cars) {
+                    if (s.type.equals("Family")) {
+                        System.out.println(s + "\n**************************************************");
+                    }
+                }
+                break;
+            case 3: //8 inputs
+                for (Car s : cars) {
+                    if (s.type.equals("Luxury")) {
+                        System.out.println(s + "\n**************************************************");
+                    }
+                }
+                break;
+            case 4:
+                for (Car s : cars) {
+                    if (s.type.equals("Sport")) {
+                        System.out.println(s + "\n**************************************************");
+                    }
+                }
+                break;
+            default:
         }
     }
 
