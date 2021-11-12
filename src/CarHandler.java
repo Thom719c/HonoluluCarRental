@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.*;
@@ -94,10 +95,11 @@ public class CarHandler {
         }
     }
 
-    public void addCarMenu(Scanner input) {
+    public void addCarMenu(Scanner input) throws FileNotFoundException {
         System.out.println("1. Family car");
         System.out.println("2. Luxury car");
         System.out.println("3. Sport car");
+        System.out.println("4. Update");
         int addType = input.nextInt();
         switch (addType) {
             case 1: //10 inputs
@@ -108,6 +110,9 @@ public class CarHandler {
                 break;
             case 3: //8 inputs
                 addSport(input);
+                break;
+            case 4:
+                FileProcessor.updateArrayList(cars);
                 break;
             default:
                 System.out.println("Not valid number");
