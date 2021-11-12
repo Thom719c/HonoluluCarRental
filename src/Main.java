@@ -6,16 +6,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         //ArrayList<Car> cars = new ArrayList<>();
-        ArrayList<Honolulu_Car_Rental> rentals = new ArrayList<>();
+        //ArrayList<Honolulu_Car_Rental> rentals = new ArrayList<>();
         //createCars(cars);
         //createRentals(rentals);
         //FileProcessor.updateArrayList(cars);
+        CarHandler carHandler = new CarHandler();
+        carHandler.createCars();
+        FileProcessor.updateArrayList(carHandler.getCars());
+        //carHandler.setCars(FileProcessor.updateArrayList(carHandler.getCars()));
 
-        runHonoluluCarRentalProgram();
 
+        runHonoluluCarRentalProgram(carHandler);
     }
 
-    public static void runHonoluluCarRentalProgram() throws IOException {
+    public static void runHonoluluCarRentalProgram(CarHandler carHandler) throws IOException {
         Scanner input = new Scanner(System.in);
         int honoluluCarRentalChoice = 0;
         while (honoluluCarRentalChoice != 3) {
@@ -25,7 +29,7 @@ public class Main {
             input.nextLine();
             switch (honoluluCarRentalChoice) {
                 case 1:
-                    cars();
+                    cars(carHandler);
                     break;
                 case 2:
                     rentals();
@@ -36,10 +40,11 @@ public class Main {
         }
     }
 
-    public static void cars() throws IOException {
+    public static void cars(CarHandler carHandler) throws IOException {
         Scanner input = new Scanner(System.in);
-        CarHandler carHandler = new CarHandler();
-        carHandler.createCars();
+
+
+        //Switch menu
         int carMenuChoice = 0;
         while (carMenuChoice != 6) {
             System.out.println("Car menu" +
