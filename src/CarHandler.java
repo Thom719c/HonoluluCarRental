@@ -1,7 +1,14 @@
 import java.util.ArrayList;
 
 public class CarHandler {
-    public static void createCars(ArrayList<Car> cars) {
+    private ArrayList<Car> cars;
+
+    //private ArrayList<Family> familyCars;
+    //private ArrayList<Luxury> luxuryCars;
+    //private ArrayList<Sport> sportCars;
+
+    public ArrayList<Car> createCars() {
+        cars = new ArrayList<>();
         //Family
         Car toyota1 = new Family("Family", "Toyota", "Proace Cyty Verso Shuttle", "Benzin", "06-2021", 5000,
                 "5. gear manual", "Yes", "Yes", 7);
@@ -41,5 +48,22 @@ public class CarHandler {
         Car mcLaren = new Sport("Sport", "McLaren", "700S",
                 "Benzin", "05/2018", 1000, "No", 720);
         cars.add(mcLaren);
+
+        return cars;
     }
+
+    public void ShowCars(){
+        createCars();
+        for (Car s: cars){
+            System.out.println(s + "\n********************************************************************************");
+        }
+    }
+
+//    public void setCars(ArrayList<Car> cars) {
+//        this.cars = cars;
+//    }
+//
+//    public ArrayList<Car> getCars() {
+//        return cars;
+//    }
 }

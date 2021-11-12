@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        ArrayList<Car> cars = new ArrayList<>();
+        //ArrayList<Car> cars = new ArrayList<>();
         ArrayList<Honolulu_Car_Rental> rentals = new ArrayList<>();
         //createCars(cars);
         //createRentals(rentals);
@@ -37,6 +37,7 @@ public class Main {
 
     public static void cars() {
         Scanner input = new Scanner(System.in);
+        CarHandler carHandler = new CarHandler();
         int carMenuChoice = 0;
         while (carMenuChoice != 6) {
             System.out.println("Car menu" +
@@ -46,6 +47,7 @@ public class Main {
             input.nextLine();
             switch (carMenuChoice) {
                 case 1:
+                    carHandler.ShowCars();
                     break;
                 case 2:
                     break;
