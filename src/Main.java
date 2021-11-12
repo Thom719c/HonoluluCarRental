@@ -14,9 +14,6 @@ public class Main {
 
     }
 
-
-
-
     public static void runHonoluluCarRentalProgram() {
         Scanner input = new Scanner(System.in);
         int honoluluCarRentalChoice = 0;
