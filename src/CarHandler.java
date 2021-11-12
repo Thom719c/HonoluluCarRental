@@ -14,13 +14,13 @@ public class CarHandler {
                 "5. gear manual", "Yes", "Yes", 7);
         cars.add(toyota1);
         Car toyota2 = new Family("Family", "Toyota", "Verso", "Diesel", "02-2012", 171000,
-                "6. gear manual", "Yes", "Yes", 7);
+                "Yes", "Yes", "Yes", 7);
         cars.add(toyota2);
         Car nissan1 = new Family("Family", "Nissan", "Qashqai", "Diesel", "02-2012", 152000,
-                "6. gear manual", "Yes", "Yes", 7);
+                "Yes", "Yes", "Yes", 7);
         cars.add(nissan1);
         Car nissan2 = new Family("Family", "Nissan", "e-NV200 Evalia Premium", "Diesel", "05-2019", 46000,
-                "6. gear manual", "Yes", "Yes", 7);
+                "Yes", "Yes", "Yes", 7);
         cars.add(nissan2);
         //Luxury
         Car bentley = new Luxury("Luxury", "Bentley", "Continental GT", "Benzin", "02/2013", 40000,
@@ -69,6 +69,7 @@ public class CarHandler {
                 addFamily(input);
                 break;
             case 2: //11 inputs
+                addLuxury(input);
                 break;
             case 3: //8 inputs
                 break;
@@ -92,6 +93,31 @@ public class CarHandler {
         }
         Car familyCar = new Family("Family", brand, model, fuelType, registration, odometer, manualGear, airCondition, cruiseControl, seat);
         cars.add(familyCar);
+        return cars;
+    }
+    public ArrayList<Car> addLuxury(Scanner input) {
+        System.out.println("Enter brand: ");
+        String brand = input.next();
+        System.out.println("Enter model: ");
+        String model = input.next();
+        System.out.println("Enter fuel type: ");
+        String fuelType = input.next();
+        System.out.println("Enter registration: ");
+        String registration = input.next();
+        System.out.println("Enter odometer: ");
+        int odometer = input.nextInt();
+        System.out.println("Enter ccm: ");
+        int ccm = input.nextInt();
+        System.out.println("Enter automatic gear (Yes/No): ");
+        String automaticGear = input.next();
+        System.out.println("Enter air condition (Yes/No): ");
+        String airCondition = input.next();
+        System.out.println("Enter cruise control (Yes/No): ");
+        String cruiseControl = input.next();
+        System.out.println("Enter leather seat type: ");
+        String leatherSeat = input.next();
+        Car luxuryCar = new Luxury("Luxury", brand, model, fuelType, registration, odometer, ccm, automaticGear, airCondition, cruiseControl, leatherSeat);
+        cars.add(luxuryCar);
         return cars;
     }
 
