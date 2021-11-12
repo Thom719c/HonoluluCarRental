@@ -1,14 +1,13 @@
-import java.util.ArrayList;
+import java.util.*;
 
 public class CarHandler {
-    private ArrayList<Car> cars;
+    private ArrayList<Car> cars = new ArrayList<>();
 
-    //private ArrayList<Family> familyCars;
+    private ArrayList<Car> familyCars = new ArrayList<Car>();
     //private ArrayList<Luxury> luxuryCars;
     //private ArrayList<Sport> sportCars;
 
     public ArrayList<Car> createCars() {
-        cars = new ArrayList<>();
         //Family
         Car toyota1 = new Family("Family", "Toyota", "Proace Cyty Verso Shuttle", "Benzin", "06-2021", 5000,
                 "5. gear manual", "Yes", "Yes", 7);
@@ -52,18 +51,66 @@ public class CarHandler {
         return cars;
     }
 
-    public void showCars(){
-        createCars();
-        for (Car s: cars){
+    public void showCars() {
+        //createCars();
+        for (Car s : cars) {
             System.out.println(s + "\n********************************************************************************");
         }
     }
 
-    public void removeCar(){
-        createCars();
-        for (int i = 0; i < cars.size(); i++){
-            System.out.printf("Nr. %-2d: %s %s \n\n", (i + 1), cars.get(i).brand, cars.get(i).model);
+    public void addCar(Scanner input) {
+        System.out.println("1. Family car");
+        System.out.println("2. Luxury car");
+        System.out.println("3. Sport car");
+        int addType = input.nextInt();
+        switch (addType) {
+            case 1: //10 inputs
+                addFamily(input);
+                break;
+            case 2: //11 inputs
+                break;
+            case 3: //8 inputs
+                break;
+            default:
+                System.out.println("Not valid number");
         }
+    }
+
+    public ArrayList<Car> addFamily(Scanner input) {
+        System.out.println("Enter brand: ");
+        String brand = input.next();
+        System.out.println("Enter model: ");
+        String model = input.next();
+        System.out.println("Enter fuel type: ");
+        String fuelType = input.next();
+        System.out.println("Enter registration: ");
+        String registration = input.next();
+        System.out.println("Enter odometer: ");
+        int odometer = input.nextInt();
+        System.out.println("Enter manual gear (Yes/No): ");
+        String manualGear = input.next();
+        System.out.println("Enter air condition (Yes/No): ");
+        String airCondition = input.next();
+        System.out.println("Enter cruise control (Yes/No): ");
+        String cruiseControl = input.next();
+        System.out.println("Enter how many seats (Min. 7): ");
+        int seat = input.nextInt();
+        while (seat < 7) {
+            System.out.println("Invalid number of seats" + "\nEnter how many seats (Min. 7): ");
+            seat = input.nextInt();
+        }
+        Car familyCar = new Family("Family", brand, model, fuelType, registration, odometer, manualGear, airCondition, cruiseControl, seat);
+        cars.add(familyCar);
+        return cars;
+    }
+
+    public void removeCar(Scanner input) {
+        for (int i = 0; i < cars.size(); i++) {
+            System.out.printf("Nr. %-2d: %s %s \n", (i + 1), cars.get(i).brand, cars.get(i).model);
+        }
+        System.out.println("Enter corresponding number for removing: ");
+        int removeChoice = input.nextInt();
+        cars.remove(removeChoice - 1);
     }
 
     public void setCars(ArrayList<Car> cars) {
