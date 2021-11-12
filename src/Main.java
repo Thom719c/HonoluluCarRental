@@ -38,6 +38,7 @@ public class Main {
     public static void cars() {
         Scanner input = new Scanner(System.in);
         CarHandler carHandler = new CarHandler();
+        carHandler.createCars();
         int carMenuChoice = 0;
         while (carMenuChoice != 6) {
             System.out.println("Car menu" +
@@ -50,12 +51,10 @@ public class Main {
                     carHandler.showCars();
                     break;
                 case 2:
-
+                    carHandler.addCar(input);
                     break;
                 case 3:
-                    //System.out.println("");
-                    //int removeChoice = input.nextInt();
-                    carHandler.removeCar();
+                    carHandler.removeCar(input);
                     break;
                 case 4:
                     break;
