@@ -55,9 +55,17 @@ public class Main {
         cars.add(rollsRoyce1);
         Car rollsRoyce2 = new Luxury("Luxury", "Rolls-Royce", "Ghost", "Benzin", "05/2017", 22500, 6592, "Yes", "Yes", "Yes", "Brown Leather");
         cars.add(rollsRoyce2);
-        Car porsche = new Luxury("Luxury", "Porsche", "Panamera Turbo S Executive", "Benzin", "09/2018", 34200, 3996, "Yes", "Yes", "Yes", "Black Leather");
-        cars.add(porsche);
+        Car porsche1 = new Luxury("Luxury", "Porsche", "Panamera Turbo S Executive", "Benzin", "09/2018", 34200, 3996, "Yes", "Yes", "Yes", "Black Leather");
+        cars.add(porsche1);
         //Sport
+        Car ford1 = new Sport("Sport", "Ford Mustang", "Shelby GT500R Eleanor", "Benzin", "12/1967", 13000, "Yes", 550);
+        cars.add(ford1);
+        Car porsche2 = new Sport("Sport", "Porsche", "911 Turbo S", "Benzin", "06/2014", 35000, "Yes", 560);
+        cars.add(porsche2);
+        Car nissan3 = new Sport("Sport", "Nissan", "GT-R R35", "Benzin", "12/2021", 12000, "No", 565);
+        cars.add(nissan3);
+        Car mcLaren = new Sport("Sport", "McLaren", "700S", "Benzin", "05/2018", 1000, "No", 720);
+        cars.add(mcLaren);
     }
 
     public static void runHonoluluCarRentalProgram() {
