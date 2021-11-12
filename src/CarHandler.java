@@ -14,13 +14,13 @@ public class CarHandler {
                 "5. gear manual", "Yes", "Yes", 7);
         cars.add(toyota1);
         Car toyota2 = new Family("Family", "Toyota", "Verso", "Diesel", "02-2012", 171000,
-                "6. gear manual", "Yes", "Yes", 7);
+                "Yes", "Yes", "Yes", 7);
         cars.add(toyota2);
         Car nissan1 = new Family("Family", "Nissan", "Qashqai", "Diesel", "02-2012", 152000,
-                "6. gear manual", "Yes", "Yes", 7);
+                "Yes", "Yes", "Yes", 7);
         cars.add(nissan1);
         Car nissan2 = new Family("Family", "Nissan", "e-NV200 Evalia Premium", "Diesel", "05-2019", 46000,
-                "6. gear manual", "Yes", "Yes", 7);
+                "Yes", "Yes", "Yes", 7);
         cars.add(nissan2);
         //Luxury
         Car bentley = new Luxury("Luxury", "Bentley", "Continental GT", "Benzin", "02/2013", 40000,
