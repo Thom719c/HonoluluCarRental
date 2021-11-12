@@ -125,7 +125,7 @@ public class CarHandler {
         System.out.println("Enter cruise control (Yes/No): ");
         String cruiseControl = input.next();
         System.out.println("Enter leather seat type: ");
-        String leatherSeat = input.next();
+        String leatherSeat = input.nextLine();
         Car luxuryCar = new Luxury("Luxury", brand, model, fuelType, registration, odometer, ccm, automaticGear, airCondition, cruiseControl, leatherSeat);
         cars.add(luxuryCar);
         return cars;
@@ -145,7 +145,7 @@ public class CarHandler {
         String manualGear = input.next();
         System.out.println("Enter hp (horse power): ");
         int hp = input.nextInt();
-        Car sportCar = new Sport("Luxury", brand, model, fuelType, registration, odometer, manualGear, hp);
+        Car sportCar = new Sport("Sport", brand, model, fuelType, registration, odometer, manualGear, hp);
         cars.add(sportCar);
         return cars;
     }
