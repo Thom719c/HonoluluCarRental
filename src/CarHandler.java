@@ -68,6 +68,7 @@ public class CarHandler {
                 addFamily(input);
                 break;
             case 2: //11 inputs
+                addLuxury(input);
                 break;
             case 3: //8 inputs
                 break;
@@ -101,6 +102,31 @@ public class CarHandler {
         }
         Car familyCar = new Family("Family", brand, model, fuelType, registration, odometer, manualGear, airCondition, cruiseControl, seat);
         cars.add(familyCar);
+        return cars;
+    }
+    public ArrayList<Car> addLuxury(Scanner input) {
+        System.out.println("Enter brand: ");
+        String brand = input.next();
+        System.out.println("Enter model: ");
+        String model = input.next();
+        System.out.println("Enter fuel type: ");
+        String fuelType = input.next();
+        System.out.println("Enter registration: ");
+        String registration = input.next();
+        System.out.println("Enter odometer: ");
+        int odometer = input.nextInt();
+        System.out.println("Enter ccm: ");
+        int ccm = input.nextInt();
+        System.out.println("Enter automatic gear (Yes/No): ");
+        String automaticGear = input.next();
+        System.out.println("Enter air condition (Yes/No): ");
+        String airCondition = input.next();
+        System.out.println("Enter cruise control (Yes/No): ");
+        String cruiseControl = input.next();
+        System.out.println("Enter leather seat type: ");
+        String leatherSeat = input.next();
+        Car luxuryCar = new Luxury("Luxury", brand, model, fuelType, registration, odometer, ccm, automaticGear, airCondition, cruiseControl, leatherSeat);
+        cars.add(luxuryCar);
         return cars;
     }
 
