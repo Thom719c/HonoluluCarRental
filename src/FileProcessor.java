@@ -24,7 +24,7 @@ public class FileProcessor {
         readCars.close();
     }
 
-    public static void writeToFile(ArrayList<Car> cars, ArrayList<Family> familyCars) throws IOException {
+    public static void writeToFile(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
 
@@ -33,12 +33,38 @@ public class FileProcessor {
         for (int i = 0; i < cars.size(); ++i) {
             if (cars.get(i).type.equals("Family")) {
                 System.out.println(cars.get(i));
+                //carsOut += cars.get(i);
             }
-//            if (cars.get(i).type.equals("Family")) {
-//                carsOut += familyCars.get(i).type + ", " + familyCars.get(i).brand + familyCars.get(i).model + familyCars.get(i).fuelType + familyCars.get(i).registration + familyCars.get(i).odometer + familyCars.get(i).manualGear + familyCars.get(i).airCondition + familyCars.get(i).cruiseControl + familyCars.get(i).seat + "\n";
-//                System.out.println("FamilyJoin");
-//            }
+            if (cars.get(i).type.equals("Family")) {
+                carsOut += cars.get(i).type + ", " + cars.get(i).brand + cars.get(i).model + cars.get(i).fuelType + cars.get(i).registration + cars.get(i).odometer /*+ familyCars.get(i).manualGear + familyCars.get(i).airCondition + familyCars.get(i).cruiseControl + familyCars.get(i).seat*/ + "\n";
+                System.out.println("FamilyJoin");
+            }
         }
+        bWrite.write(carsOut);
+        bWrite.close();
+    }
+
+    public static void writeToFileTest(ArrayList<Car> cars) throws IOException {
+        FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
+        BufferedWriter bWrite = new BufferedWriter(writeFile);
+
+        String carsOut = "";
+
+        Scanner readCars = new Scanner(new File("Files/Cars"));
+
+//        for (int i = 0; i < cars.size(); i++){
+//
+//            String[] carInfo;
+//            cars.get(i);
+//            if (carInfo[0].equals("Family")) {
+//
+//            } else if (carInfo[0].equals("Luxury")) {
+//
+//            } else if (carInfo[0].equals("Sport")) {
+//
+//            }
+//        }
+
         bWrite.write(carsOut);
         bWrite.close();
     }
