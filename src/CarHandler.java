@@ -1,10 +1,11 @@
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.*;
 
 public class CarHandler {
     private ArrayList<Car> cars = new ArrayList<>();
 
-    //private ArrayList<Car> familyCars = new ArrayList<Car>();
+    private ArrayList<Family> familyCars = new ArrayList<>();
     //private ArrayList<Luxury> luxuryCars;
     //private ArrayList<Sport> sportCars;
 
@@ -52,7 +53,7 @@ public class CarHandler {
         return cars;
     }
 
-    public void showCars(Scanner input) {
+    public void showCars(Scanner input) throws IOException {
 //        for (Car s : cars) {
 //            System.out.println(s + "\n********************************************************************************");
 //        }
@@ -63,13 +64,17 @@ public class CarHandler {
                 for (Car s : cars) {
                     System.out.println(s + "\n**************************************************");
                 }
+                FileProcessor.writeToFile(cars, familyCars);
                 break;
             case 2: //11 inputs
-                for (Car s : cars) {
-                    if (s.type.equals("Family")) {
-                        System.out.println(s + "\n**************************************************");
+                for (int i = 0; i < cars.size(); i++) {
+                    for (Car s : cars) {
+                        if (s.type.equals("Family")) {
+                            System.out.printf("Nr. %-2d: %s %s \n", (i + 1), cars.get(i).brand, cars.get(i).model);
+                        }
                     }
                 }
+
                 break;
             case 3: //8 inputs
                 for (Car s : cars) {

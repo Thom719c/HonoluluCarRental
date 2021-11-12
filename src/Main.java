@@ -1,9 +1,10 @@
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         //ArrayList<Car> cars = new ArrayList<>();
         ArrayList<Honolulu_Car_Rental> rentals = new ArrayList<>();
         //createCars(cars);
@@ -14,7 +15,7 @@ public class Main {
 
     }
 
-    public static void runHonoluluCarRentalProgram() {
+    public static void runHonoluluCarRentalProgram() throws IOException {
         Scanner input = new Scanner(System.in);
         int honoluluCarRentalChoice = 0;
         while (honoluluCarRentalChoice != 3) {
@@ -35,7 +36,7 @@ public class Main {
         }
     }
 
-    public static void cars() {
+    public static void cars() throws IOException {
         Scanner input = new Scanner(System.in);
         CarHandler carHandler = new CarHandler();
         carHandler.createCars();
