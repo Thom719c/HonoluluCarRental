@@ -47,11 +47,15 @@ public class Main {
             input.nextLine();
             switch (carMenuChoice) {
                 case 1:
-                    carHandler.ShowCars();
+                    carHandler.showCars();
                     break;
                 case 2:
+
                     break;
                 case 3:
+                    //System.out.println("");
+                    //int removeChoice = input.nextInt();
+                    carHandler.removeCar();
                     break;
                 case 4:
                     break;

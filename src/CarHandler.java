@@ -52,18 +52,25 @@ public class CarHandler {
         return cars;
     }
 
-    public void ShowCars(){
+    public void showCars(){
         createCars();
         for (Car s: cars){
             System.out.println(s + "\n********************************************************************************");
         }
     }
 
-//    public void setCars(ArrayList<Car> cars) {
-//        this.cars = cars;
-//    }
-//
-//    public ArrayList<Car> getCars() {
-//        return cars;
-//    }
+    public void removeCar(){
+        createCars();
+        for (int i = 0; i < cars.size(); i++){
+            System.out.printf("Nr. %-2d: %s %s \n\n", (i + 1), cars.get(i).brand, cars.get(i).model);
+        }
+    }
+
+    public void setCars(ArrayList<Car> cars) {
+        this.cars = cars;
+    }
+
+    public ArrayList<Car> getCars() {
+        return cars;
+    }
 }

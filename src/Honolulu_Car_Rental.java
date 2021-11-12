@@ -1,4 +1,4 @@
-public class Honolulu_Car_Rental {
+public abstract class Honolulu_Car_Rental {
     String driverName;
     String address;
     int zipCode;

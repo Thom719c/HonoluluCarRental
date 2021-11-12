@@ -1,4 +1,4 @@
-public class Car {
+public abstract class Car {
     //Fields
     String type;
     String brand;
