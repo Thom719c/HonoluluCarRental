@@ -51,7 +51,7 @@ public class Main {
                     carHandler.showCars();
                     break;
                 case 2:
-                    carHandler.addCar(input);
+                    carHandler.addCarMenu(input);
                     break;
                 case 3:
                     carHandler.removeCar(input);

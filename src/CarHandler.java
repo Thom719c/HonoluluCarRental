@@ -1,9 +1,10 @@
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class CarHandler {
     private ArrayList<Car> cars = new ArrayList<>();
 
-    private ArrayList<Car> familyCars = new ArrayList<Car>();
+    //private ArrayList<Car> familyCars = new ArrayList<Car>();
     //private ArrayList<Luxury> luxuryCars;
     //private ArrayList<Sport> sportCars;
 
@@ -58,7 +59,7 @@ public class CarHandler {
         }
     }
 
-    public void addCar(Scanner input) {
+    public void addCarMenu(Scanner input) {
         System.out.println("1. Family car");
         System.out.println("2. Luxury car");
         System.out.println("3. Sport car");
@@ -77,16 +78,6 @@ public class CarHandler {
     }
 
     public ArrayList<Car> addFamily(Scanner input) {
-        System.out.println("Enter brand: ");
-        String brand = input.next();
-        System.out.println("Enter model: ");
-        String model = input.next();
-        System.out.println("Enter fuel type: ");
-        String fuelType = input.next();
-        System.out.println("Enter registration: ");
-        String registration = input.next();
-        System.out.println("Enter odometer: ");
-        int odometer = input.nextInt();
         System.out.println("Enter manual gear (Yes/No): ");
         String manualGear = input.next();
         System.out.println("Enter air condition (Yes/No): ");
