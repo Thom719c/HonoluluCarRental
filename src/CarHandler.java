@@ -72,6 +72,7 @@ public class CarHandler {
                 addLuxury(input);
                 break;
             case 3: //8 inputs
+                addSport(input);
                 break;
             default:
                 System.out.println("Not valid number");
@@ -128,6 +129,25 @@ public class CarHandler {
         String leatherSeat = input.next();
         Car luxuryCar = new Luxury("Luxury", brand, model, fuelType, registration, odometer, ccm, automaticGear, airCondition, cruiseControl, leatherSeat);
         cars.add(luxuryCar);
+        return cars;
+    }
+    public ArrayList<Car> addSport(Scanner input) {
+        System.out.println("Enter brand: ");
+        String brand = input.next();
+        System.out.println("Enter model: ");
+        String model = input.next();
+        System.out.println("Enter fuel type: ");
+        String fuelType = input.next();
+        System.out.println("Enter registration: ");
+        String registration = input.next();
+        System.out.println("Enter odometer: ");
+        int odometer = input.nextInt();
+        System.out.println("Enter manual gear (Yes/No): ");
+        String manualGear = input.next();
+        System.out.println("Enter hp (horse power): ");
+        int hp = input.nextInt();
+        Car sportCar = new Sport("Luxury", brand, model, fuelType, registration, odometer, manualGear, hp);
+        cars.add(sportCar);
         return cars;
     }
 
