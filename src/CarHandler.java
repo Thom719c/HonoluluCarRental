@@ -1,9 +1,11 @@
+import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class CarHandler {
     private ArrayList<Car> cars = new ArrayList<>();
 
-    private ArrayList<Car> familyCars = new ArrayList<Car>();
+    private ArrayList<Family> familyCars = new ArrayList<>();
     //private ArrayList<Luxury> luxuryCars;
     //private ArrayList<Sport> sportCars;
 
@@ -51,14 +53,48 @@ public class CarHandler {
         return cars;
     }
 
-    public void showCars() {
-        //createCars();
-        for (Car s : cars) {
-            System.out.println(s + "\n********************************************************************************");
+    public void showCars(Scanner input) throws IOException {
+//        for (Car s : cars) {
+//            System.out.println(s + "\n********************************************************************************");
+//        }
+        System.out.println("1. Show all \n2. Family car \n3. Luxury car \n4. Sport car \n5. Exit");
+        int showType = input.nextInt();
+        switch (showType) {
+            case 1: //10 inputs
+                for (Car s : cars) {
+                    System.out.println(s + "\n**************************************************");
+                }
+                FileProcessor.writeToFile(cars, familyCars);
+                break;
+            case 2: //11 inputs
+                for (int i = 0; i < cars.size(); i++) {
+                    for (Car s : cars) {
+                        if (s.type.equals("Family")) {
+                            System.out.printf("Nr. %-2d: %s %s \n", (i + 1), cars.get(i).brand, cars.get(i).model);
+                        }
+                    }
+                }
+
+                break;
+            case 3: //8 inputs
+                for (Car s : cars) {
+                    if (s.type.equals("Luxury")) {
+                        System.out.println(s + "\n**************************************************");
+                    }
+                }
+                break;
+            case 4:
+                for (Car s : cars) {
+                    if (s.type.equals("Sport")) {
+                        System.out.println(s + "\n**************************************************");
+                    }
+                }
+                break;
+            default:
         }
     }
 
-    public void addCar(Scanner input) {
+    public void addCarMenu(Scanner input) {
         System.out.println("1. Family car");
         System.out.println("2. Luxury car");
         System.out.println("3. Sport car");
