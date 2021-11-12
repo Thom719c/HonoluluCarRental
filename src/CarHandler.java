@@ -14,13 +14,13 @@ public class CarHandler {
         Car toyota1 = new Family("Family", "Toyota", "Proace Cyty Verso Shuttle", "Benzin", "06-2021", 5000,
                 "5. gear manual", "Yes", "Yes", 7);
         cars.add(toyota1);
-        Car toyota2 = new Family("Family", "Toyota", "Verso", "Diesel", "02-2012", 171000,
+        Car toyota2 = new Family("Family", "Toyota", "Verso", "Diesel", "02/2012", 171000,
                 "Yes", "Yes", "Yes", 7);
         cars.add(toyota2);
-        Car nissan1 = new Family("Family", "Nissan", "Qashqai", "Diesel", "02-2012", 152000,
+        Car nissan1 = new Family("Family", "Nissan", "Qashqai", "Diesel", "02/2012", 152000,
                 "Yes", "Yes", "Yes", 7);
         cars.add(nissan1);
-        Car nissan2 = new Family("Family", "Nissan", "e-NV200 Evalia Premium", "Diesel", "05-2019", 46000,
+        Car nissan2 = new Family("Family", "Nissan", "e-NV200 Evalia Premium", "Diesel", "05/2019", 46000,
                 "Yes", "Yes", "Yes", 7);
         cars.add(nissan2);
         //Luxury
@@ -143,9 +143,9 @@ public class CarHandler {
     }
     public ArrayList<Car> addLuxury(Scanner input) {
         System.out.println("Enter brand: ");
-        String brand = input.next();
+        String brand = input.nextLine();
         System.out.println("Enter model: ");
-        String model = input.next();
+        String model = input.nextLine();
         System.out.println("Enter fuel type: ");
         String fuelType = input.next();
         System.out.println("Enter registration: ");
