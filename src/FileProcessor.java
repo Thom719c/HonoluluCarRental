@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class FileProcessor {
-    public static void updateArrayList(ArrayList<Car> cars) throws FileNotFoundException {
+    public static void updateCarArrayList(ArrayList<Car> cars) throws FileNotFoundException {
         Scanner readCars = new Scanner(new File("Files/Cars"));
         while (readCars.hasNextLine()) {
             String[] carInfo = readCars.nextLine().split(", ");
@@ -77,5 +77,11 @@ public class FileProcessor {
         }
         bWrite.write(carsOut);
         bWrite.close();
+    }
+
+    public static void writeToRentalFile(ArrayList<Honolulu_Car_Rental> rentals) {
+    }
+    public static void updateRentalArrayList(ArrayList<Honolulu_Car_Rental> rentals) throws FileNotFoundException {
+
     }
 }

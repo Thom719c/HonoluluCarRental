@@ -104,7 +104,7 @@ public class CarHandler {
                 addSport(input);
                 break;
             case 4:
-                FileProcessor.updateArrayList(cars);
+                FileProcessor.updateCarArrayList(cars);
                 break;
             default:
                 System.out.println("Not valid number");

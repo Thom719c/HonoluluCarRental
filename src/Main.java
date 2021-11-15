@@ -9,7 +9,7 @@ public class Main {
         RentalsHandler rentalsHandler = new RentalsHandler();
         carHandler.createCars();
         rentalsHandler.createRentals();
-        FileProcessor.updateArrayList(carHandler.getCars());
+        FileProcessor.updateCarArrayList(carHandler.getCars());
 
         runHonoluluCarRentalProgram(carHandler, rentalsHandler);
     }
@@ -72,7 +72,7 @@ public class Main {
         int rentalChoice = 0;
         while (rentalChoice != 6) {
             System.out.println("Rental menu" +
-                    "\n1. Add private customer \n2. Add Company customer \n3. Create contract " +
+                    "\n1.show rentals \n2. Add rentals \n \n3. Create contract " +
                     "\n4. Change info \n5. Search after contract \n6. For exit" + "\nIndtast nummer: ");
             rentalChoice = input.nextInt();
             input.nextLine();
@@ -81,7 +81,7 @@ public class Main {
                     rentalsHandler.showRentals(input);
                     break;
                 case 2:
-
+                    rentalsHandler.addRentalMenu(input);
                     break;
                 case 3:
                     break;
