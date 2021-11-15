@@ -91,8 +91,6 @@ public class FileProcessor {
         }
         readRentals.close();
     }
-    public static void writeToRentalFile(ArrayList<Honolulu_Car_Rental> rentals) {
-    }
 
     public static void writeToRentalFile(ArrayList<Honolulu_Car_Rental> rentals) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Rentals"), false);

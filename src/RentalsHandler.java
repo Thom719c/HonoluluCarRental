@@ -66,7 +66,7 @@ public class RentalsHandler {
         }
     }
 
-    public void addRentalMenu(Scanner input) throws FileNotFoundException {
+    public void addRentalMenu(Scanner input) throws IOException {
         System.out.println("1. Private customer");
         System.out.println("2. Company customer");
         System.out.println("3. Update");
