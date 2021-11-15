@@ -242,22 +242,40 @@ public class CarHandler {
                 int pickInfo = input.nextInt();
                 switch (pickInfo){
                     case 1:
+                        System.out.println("Enter new first brand: ");
+                        strArrayFamily[0] = input.nextLine();
                         break;
                     case 2:
+                        System.out.println("Enter new model: ");
+                        strArrayFamily[1] = input.nextLine();
                         break;
                     case 3:
+                        System.out.println("Enter new fuel type: ");
+                        strArrayFamily[2] = input.nextLine();
                         break;
                     case 4:
+                        System.out.println("Enter new registration: ");
+                        strArrayFamily[3] = input.nextLine();
                         break;
                     case 5:
+                        System.out.println("Enter new odometer: ");
+                        strArrayFamily[4] = input.nextLine();
                         break;
                     case 6:
+                        System.out.println("Enter new manual gear: ");
+                        strArrayFamily[5] = input.nextLine();
                         break;
                     case 7:
+                        System.out.println("Enter new air condition: ");
+                        strArrayFamily[6] = input.nextLine();
                         break;
                     case 8:
+                        System.out.println("Enter new cruise control: ");
+                        strArrayFamily[7] = input.nextLine();
                         break;
                     case 9:
+                        System.out.println("Enter new seats (>=7): ");
+                        strArrayFamily[8] = input.nextLine();
                         break;
 
                 }
