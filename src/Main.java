@@ -6,13 +6,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         CarHandler carHandler = new CarHandler();
-        carHandler.createCars();
+        RentalsHandler rentalsHandler = new RentalsHandler();
+        //carHandler.createCars();
         FileProcessor.updateArrayList(carHandler.getCars());
 
-        runHonoluluCarRentalProgram(carHandler);
+        runHonoluluCarRentalProgram(carHandler, rentalsHandler);
     }
 
-    public static void runHonoluluCarRentalProgram(CarHandler carHandler) throws IOException {
+    public static void runHonoluluCarRentalProgram(CarHandler carHandler, RentalsHandler rentalsHandler) throws IOException {
         Scanner input = new Scanner(System.in);
         int honoluluCarRentalChoice = 0;
         while (honoluluCarRentalChoice != 3) {
@@ -25,7 +26,7 @@ public class Main {
                     cars(carHandler);
                     break;
                 case 2:
-                    rentals();
+                    rentals(rentalsHandler);
                     break;
                 default:
                     System.out.println();
@@ -65,7 +66,7 @@ public class Main {
         }
     }
 
-    public static void rentals() {
+    public static void rentals(RentalsHandler rentalsHandler) throws IOException {
         Scanner input = new Scanner(System.in);
         int rentalChoice = 0;
         while (rentalChoice != 6) {
@@ -76,7 +77,7 @@ public class Main {
             input.nextLine();
             switch (rentalChoice) {
                 case 1:
-
+                    rentalsHandler.showRentals(input);
                     break;
                 case 2:
 
