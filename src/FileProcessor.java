@@ -22,7 +22,7 @@ public class FileProcessor {
         }
         readCars.close();
     }
-
+    /*
     public static void writeToFileT(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
@@ -39,23 +39,7 @@ public class FileProcessor {
 
         bWrite.close();
     }
-
-    /*public static void writeToFile(ArrayList<Car> cars) throws IOException {
-        FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
-        BufferedWriter bWrite = new BufferedWriter(writeFile);
-
-        String carsOut = "";
-        for (String s : cars.toString().split("\n")) {
-            s = s.substring(s.indexOf(": ") + 2);
-            s = s.replace(", brand: ", "\n");
-            //s = s.replace("brand: ", "\n");
-            carsOut += s + ", ";
-        }
-        bWrite.write(carsOut);
-
-        bWrite.close();
-    }*/
-
+    */
     public static void writeToCarFile(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
@@ -63,17 +47,6 @@ public class FileProcessor {
         String carsOut = "";
         String[] sArr = new String[cars.size()];
         Arrays.fill(sArr, "");
-        /*
-        String cFOut = "";
-        String cLOut = "";
-        String cSOut = "";
-
-        String[] sFArr = new String[cars.size()];
-        String[] sLArr = new String[cars.size()];
-        String[] sSrr = new String[cars.size()];
-        Arrays.fill(sFArr, "");
-        Arrays.fill(sLArr, "");
-        Arrays.fill(sSrr, "");*/
 
         for (int i = 0; i < cars.size(); i++) {
             String s = String.valueOf(cars.get(i));
