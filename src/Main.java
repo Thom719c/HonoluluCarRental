@@ -68,10 +68,10 @@ public class Main {
     public static void rentals(RentalsHandler rentalsHandler) throws IOException {
         Scanner input = new Scanner(System.in);
         int rentalChoice = 0;
-        while (rentalChoice != 6) {
+        while (rentalChoice != 7) {
             System.out.println("Rental menu" +
-                    "\n1.show rentals \n2. Add rentals \n \n3. Create contract " +
-                    "\n4. Change info \n5. Search after contract \n6. For exit" + "\nIndtast nummer: ");
+                    "\n1.show rentals \n2. Add rentals \n3. Remove rentals \n4. Create contract " +
+                    "\n5. Change info \n6. Search after contract \n7. For exit" + "\nIndtast nummer: ");
             rentalChoice = input.nextInt();
             input.nextLine();
             switch (rentalChoice) {
@@ -82,6 +82,7 @@ public class Main {
                     rentalsHandler.addRentalMenu(input);
                     break;
                 case 3:
+                    rentalsHandler.removeRental(input);
                     break;
                 case 4:
                     //Todo Should we overwrite and create new contract if there is wrong info (case 4 change info)

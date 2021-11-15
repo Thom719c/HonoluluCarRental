@@ -136,11 +136,13 @@ public class RentalsHandler {
         int crn = input.nextInt();
         boolean tester = true;
         while (tester){
+
             Matcher m = Pattern.compile("(?<!\\d)\\d{6}(?!\\d)").matcher(String.valueOf(crn)); //Matcher Class - Used to search for the pattern and Pattern Class - Defines a pattern (to be used in a search)
             if (m.find()) {
                 break;
             } else {
                 System.out.println("Not valid! try again (6 digits number)! ");
+                crn = input.nextInt();
             }
         }
         Honolulu_Car_Rental companyCustomer = new Company_Rentals("Private", driverName, address, zipCode, city,
