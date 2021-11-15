@@ -141,6 +141,7 @@ public class RentalsHandler {
                 break;
             } else {
                 System.out.println("Not valid! try again (6 digits number)! ");
+                crn = input.nextInt();
             }
         }
         Honolulu_Car_Rental companyCustomer = new Company_Rentals("Private", driverName, address, zipCode, city,
