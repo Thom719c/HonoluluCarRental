@@ -205,7 +205,6 @@ public class CarHandler {
         int editChoice = input.nextInt();
         if (editChoice == 1) {
             showCarType("Family");
-
         } else if (editChoice == 2) {
             showCarType("Luxury");
         } else {
