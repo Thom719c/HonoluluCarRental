@@ -239,8 +239,113 @@ public class CarHandler {
                     System.out.println("Nr. " + (i + 1) + ": " + strArrayFamily[i]);
                 }
                 System.out.println("Enter number for which info you want to change: ");
-                int pickInfo = input.nextInt();
-                switch (pickInfo){
+                int pickInfoF = input.nextInt();
+                switch (pickInfoF){
+                    case 1:
+                        System.out.println("Enter new first brand: ");
+                        String brand = input.next();
+                        strArrayFamily[0] = brand;
+                        break;
+                    case 2:
+                        System.out.println("Enter new model: ");
+                        strArrayFamily[1] = input.nextLine();
+                        break;
+                    case 3:
+                        System.out.println("Enter new fuel type: ");
+                        strArrayFamily[2] = input.nextLine();
+                        break;
+                    case 4:
+                        System.out.println("Enter new registration: ");
+                        strArrayFamily[3] = input.nextLine();
+                        break;
+                    case 5:
+                        System.out.println("Enter new odometer: ");
+                        int odometer = input.nextInt();
+                        strArrayLuxury[4] = String.valueOf(odometer);
+                        break;
+                    case 6:
+                        System.out.println("Enter new manual gear: ");
+                        strArrayFamily[5] = input.nextLine();
+                        break;
+                    case 7:
+                        System.out.println("Enter new air condition: ");
+                        strArrayFamily[6] = input.nextLine();
+                        break;
+                    case 8:
+                        System.out.println("Enter new cruise control: ");
+                        strArrayFamily[7] = input.nextLine();
+                        break;
+                    case 9:
+                        System.out.println("Enter new seats (>=7): ");
+                        int seat = input.nextInt();
+                        strArrayLuxury[8] = String.valueOf(seat);
+                        break;
+
+                }
+                break;
+            case "Luxury":
+                for (int j = 0; j < 10; j++) {
+                    sArr[picked - 1] += strArr[j] +  "\n";
+                    strArrayLuxury = sArr[picked - 1].split("\n");
+                }
+                for (int i = 0; i < strArrayLuxury.length; i++) {
+                    System.out.println("Nr. " + (i + 1) + ": " + strArrayLuxury[i]);
+                }
+                System.out.println("Enter number for which info you want to change: ");
+                int pickInfoL = input.nextInt();
+                switch (pickInfoL){
+                    case 1:
+                        System.out.println("Enter new first brand: ");
+                        strArrayLuxury[0] = input.nextLine();
+                        break;
+                    case 2:
+                        System.out.println("Enter new model: ");
+                        strArrayLuxury[1] = input.nextLine();
+                        break;
+                    case 3:
+                        System.out.println("Enter new fuel type: ");
+                        strArrayLuxury[2] = input.nextLine();
+                        break;
+                    case 4:
+                        System.out.println("Enter new registration: ");
+                        strArrayLuxury[3] = input.nextLine();
+                        break;
+                    case 5:
+                        System.out.println("Enter new odometer: ");
+                        int odometer = input.nextInt();
+                        strArrayLuxury[4] = String.valueOf(odometer);
+                        break;
+                    case 6:
+                        System.out.println("Enter new manual gear: ");
+                        strArrayLuxury[5] = input.nextLine();
+                        break;
+                    case 7:
+                        System.out.println("Enter new air condition: ");
+                        strArrayLuxury[6] = input.nextLine();
+                        break;
+                    case 8:
+                        System.out.println("Enter new cruise control: ");
+                        strArrayLuxury[7] = input.nextLine();
+                        break;
+                    case 9:
+                        System.out.println("Enter new seats (>=7): ");
+                        int seat = input.nextInt();
+                        strArrayLuxury[8] = String.valueOf(seat);
+                        break;
+
+                }
+                break;
+            case "Sport":
+                for (int j = 0; j < 7; j++) {
+                    sArr[picked - 1] += strArr[j] +  "\n";
+                    strArrayFamily = sArr[picked - 1].split("\n");
+                }
+                for (int i = 0; i < strArrayFamily.length; i++) {
+                    System.out.println("Nr. " + (i + 1) + ": " + strArrayFamily[i]);
+                }
+                System.out.println("Enter number for which info you want to change: ");
+                int pickInfoS = input.nextInt();
+                switch (pickInfoS){
                     case 1:
                         System.out.println("Enter new first brand: ");
                         strArrayFamily[0] = input.nextLine();
@@ -259,7 +364,8 @@ public class CarHandler {
                         break;
                     case 5:
                         System.out.println("Enter new odometer: ");
-                        strArrayFamily[4] = input.nextLine();
+                        int odometer = input.nextInt();
+                        strArrayLuxury[4] = String.valueOf(odometer);
                         break;
                     case 6:
                         System.out.println("Enter new manual gear: ");
@@ -278,18 +384,6 @@ public class CarHandler {
                         strArrayFamily[8] = input.nextLine();
                         break;
 
-                }
-                break;
-            case "Luxury":
-                for (int j = 0; j < 10; j++) {
-                    String newLastLuxury = strArr[j].substring(strArr[j].indexOf(": ") + 2);
-                    sArr[picked - 1] += newLastLuxury + ", ";
-                }
-                break;
-            case "Sport":
-                for (int j = 0; j < 7; j++) {
-                    String newLastSport = strArr[j].substring(strArr[j].indexOf(": ") + 2);
-                    sArr[picked - 1] += newLastSport + ", ";
                 }
                 break;
         }
