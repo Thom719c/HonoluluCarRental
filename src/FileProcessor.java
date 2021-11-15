@@ -51,26 +51,23 @@ public class FileProcessor {
         for (int i = 0; i < cars.size(); i++) {
             String s = String.valueOf(cars.get(i));
             String[] strArr = s.split("\n");
-            System.out.println(cars.get(i).type);
             switch (cars.get(i).type) {
                 case "Family":
-                    for (int j = 0; j < 9; j++) {
+                    for (int j = 0; j < cars.size()-2; j++) {
                         String newLastFamily = strArr[j].substring(strArr[j].indexOf(": ") + 2);
                         sArr[i] += newLastFamily + ", ";
                     }
                     carsOut += "Family, " + sArr[i] + "\n";
-                    System.out.println(carsOut);
                     break;
                 case "Luxury":
-                    for (int j = 0; j < 10; j++) {
+                    for (int j = 0; j < cars.size()-1; j++) {
                         String newLastLuxury = strArr[j].substring(strArr[j].indexOf(": ") + 2);
                         sArr[i] += newLastLuxury + ", ";
                     }
                     carsOut += "Luxury, " + sArr[i] + "\n";
-                    System.out.println(carsOut);
                     break;
                 case "Sport":
-                    for (int j = 0; j < 7; j++) {
+                    for (int j = 0; j < cars.size()-4; j++) {
                         String newLastSport = strArr[j].substring(strArr[j].indexOf(": ") + 2);
                         sArr[i] += newLastSport + ", ";
                     }
@@ -78,9 +75,7 @@ public class FileProcessor {
                     break;
             }
         }
-
         bWrite.write(carsOut);
-
         bWrite.close();
     }
 }
