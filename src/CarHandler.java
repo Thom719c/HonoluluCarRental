@@ -240,6 +240,7 @@ public class CarHandler {
                 }
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoF = input.nextInt();
+                input.nextLine();
                 switch (pickInfoF){
                     case 1:
                         System.out.println("Enter new first brand: ");
@@ -290,6 +291,7 @@ public class CarHandler {
                 }
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoL = input.nextInt();
+                input.nextLine();
                 switch (pickInfoL){
                     case 1:
                         System.out.println("Enter new first brand: ");
@@ -342,6 +344,7 @@ public class CarHandler {
                 }
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoS = input.nextInt();
+                input.nextLine();
                 switch (pickInfoS){
                     case 1:
                         System.out.println("Enter new first brand: ");
