@@ -279,9 +279,9 @@ public class CarHandler {
                         strArrayFamily[8] = String.valueOf(input.nextInt());
                         break;
                 }
-                /*Car familyCar = new Family("Family", strArrayFamily[0], strArrayFamily[1], strArrayFamily[2], strArrayFamily[3], Integer.parseInt(strArrayFamily[4]),
+                Car familyCar = new Family("Family", strArrayFamily[0], strArrayFamily[1], strArrayFamily[2], strArrayFamily[3], Integer.parseInt(strArrayFamily[4]),
                         strArrayFamily[5], strArrayFamily[6], strArrayFamily[7], Integer.parseInt(strArrayFamily[8]));
-                cars.set(picked - 1, familyCar);*/
+                cars.set(picked - 1, familyCar);
                 break;
             case "Luxury":
                 for (int j = 0; j < 10; j++) {
