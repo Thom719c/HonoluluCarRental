@@ -45,23 +45,22 @@ public class RentalsHandler {
                 //FileProcessor.writeToRentalFile(rentals);
                 break;
             case 2: //11 inputs
-                for (int i = 0; i < rentals.size(); i++) {
-                    for (Honolulu_Car_Rental s : rentals) {
-                        if (s.customer.equals("Private")) {
-                            System.out.println(s + "\n**************************************************");
-                        }
-                    }
-                }
+                showRentalType("Private");
 
                 break;
             case 3: //8 inputs
-                for (Honolulu_Car_Rental s : rentals) {
-                    if (s.customer.equals("Company")) {
-                        System.out.println(s + "\n**************************************************");
-                    }
-                }
+                showRentalType("Company");
                 break;
             default:
+        }
+    }
+    public void showRentalType(String rentalType) {
+        int tempI = 1;
+        for (Honolulu_Car_Rental s : rentals) {
+            if (s.customer.equals(rentalType)) {
+                System.out.printf("Nr. %-2d: %s %s \n", tempI, s.driverName, s.email);
+                tempI++;
+            }
         }
     }
 }
