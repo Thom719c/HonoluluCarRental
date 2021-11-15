@@ -210,7 +210,6 @@ public class CarHandler {
         int editChoice = input.nextInt();
         if (editChoice == 1) {
             showCarType("Family");
-
         } else if (editChoice == 2) {
             showCarType("Luxury");
         } else {
@@ -239,7 +238,7 @@ public class CarHandler {
                     String newLastFamily = strArrayFamily[i].substring(strArrayFamily[i].indexOf(": ") + 2);
                     strArrayFamily[i] = newLastFamily;
                 }
-                System.out.println(Arrays.toString(strArrayFamily));
+                //System.out.println(Arrays.toString(strArrayFamily));
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoF = input.nextInt();
                 input.nextLine();
@@ -315,8 +314,7 @@ public class CarHandler {
                         break;
                     case 5:
                         System.out.println("Enter new odometer: ");
-                        int odometer = input.nextInt();
-                        strArrayLuxury[4] = String.valueOf(odometer);
+                        strArrayLuxury[4] = String.valueOf(input.nextInt());
                         break;
                     case 6:
                         System.out.println("Enter new manual gear: ");
