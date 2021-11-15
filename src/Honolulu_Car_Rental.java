@@ -19,7 +19,7 @@ public abstract class Honolulu_Car_Rental {
         email = e;
     }
     public String toString(){
-        return("customer: " + customer + "\ndriver name: " + driverName + "\naddress: " + address + "\nzipcode: " + zipCode + "\ncity: " + city +
+        return("driver name: " + driverName + "\naddress: " + address + "\nzipcode: " + zipCode + "\ncity: " + city +
                 "\nmobile phone: " + mobilePhone + "\nphone: " + phone + "\nemail: " + email);
     }
 }
