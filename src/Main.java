@@ -8,6 +8,7 @@ public class Main {
         CarHandler carHandler = new CarHandler();
         RentalsHandler rentalsHandler = new RentalsHandler();
         carHandler.createCars();
+        rentalsHandler.createRentals();
         FileProcessor.updateArrayList(carHandler.getCars());
 
         runHonoluluCarRentalProgram(carHandler, rentalsHandler);

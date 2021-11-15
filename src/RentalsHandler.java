@@ -7,7 +7,7 @@ public class RentalsHandler {
     private ArrayList<Honolulu_Car_Rental> rentals = new ArrayList<>();
 
 
-    public void createRentals(ArrayList<Honolulu_Car_Rental> rentals) {
+    public ArrayList<Honolulu_Car_Rental> createRentals() {
         Honolulu_Car_Rental customerP1 = new Private_Rentals("Private","Josh","Nybobvej",2500, "Valby",
                 45678798, 13234567, "Joshie@gmail.com", 106783593, "6/3/2018");
         rentals.add(customerP1);
@@ -33,6 +33,8 @@ public class RentalsHandler {
         Honolulu_Car_Rental customerC4 = new Company_Rentals("Company","Jeff","Hjallesevej",5000, "Odense C",
                 71857745, 29712586, "Besos@gmail.com", "Amazon", "Amazon street", 80633018, 420205);
         rentals.add(customerC4);
+
+        return rentals;
     }
     public void showRentals(Scanner input) throws IOException {
         System.out.println("1. Show all \n2. Private customer \n3. Company customer \n4. Exit");

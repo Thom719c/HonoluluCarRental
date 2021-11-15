@@ -16,6 +16,6 @@ public class Company_Rentals extends Honolulu_Car_Rental{
     }
     @Override
     public String toString() {
-        return (super.toString() + "\ncompany name: " + companyName + "\ncompany address: " + companyAddress + "\ncompany phone number: " + companyPhoneNumber + "company registration number: " + crn);
+        return (super.toString() + "\ncompany name: " + companyName + "\ncompany address: " + companyAddress + "\ncompany phone number: " + companyPhoneNumber + "\ncompany registration number: " + crn);
     }
 }
