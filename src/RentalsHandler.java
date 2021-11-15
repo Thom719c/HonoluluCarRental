@@ -1,11 +1,9 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.util.*;
+import java.util.regex.*;
 
 public class RentalsHandler {
     private ArrayList<Honolulu_Car_Rental> rentals = new ArrayList<>();
-
 
     public ArrayList<Honolulu_Car_Rental> createRentals() {
         Honolulu_Car_Rental customerP1 = new Private_Rentals("Private", "Josh", "Nybobvej", 2500, "Valby",
@@ -136,10 +134,15 @@ public class RentalsHandler {
         int companyPhoneNumber = input.nextInt();
         System.out.println("Enter company registration number (6 digits): ");
         int crn = input.nextInt();
-        /*while (crn = "\d\d\d\d\d\d") {
-            System.out.println("Invalid number of seats" + "\nEnter how many seats (Min. 7): ");
-            crn = input.nextInt();
-        }*/
+        boolean tester = true;
+        while (tester){
+            Matcher m = Pattern.compile("(?<!\\d)\\d{6}(?!\\d)").matcher(String.valueOf(crn)); //Matcher Class - Used to search for the pattern and Pattern Class - Defines a pattern (to be used in a search)
+            if (m.find()) {
+                break;
+            } else {
+                System.out.println("Not valid! try again (6 digits number)! ");
+            }
+        }
         Honolulu_Car_Rental companyCustomer = new Company_Rentals("Private", driverName, address, zipCode, city,
                 mobilePhone, phone, email,companyName, companyAddress, companyPhoneNumber, crn);
         rentals.add(companyCustomer);
