@@ -210,6 +210,7 @@ public class CarHandler {
         int editChoice = input.nextInt();
         if (editChoice == 1) {
             showCarType("Family");
+
         } else if (editChoice == 2) {
             showCarType("Luxury");
         } else {
@@ -314,27 +315,33 @@ public class CarHandler {
                         break;
                     case 5:
                         System.out.println("Enter new odometer: ");
-                        strArrayLuxury[4] = String.valueOf(input.nextInt());
+                        strArrayFamily[4] = String.valueOf(input.nextInt());
                         break;
                     case 6:
-                        System.out.println("Enter new manual gear: ");
-                        strArrayLuxury[5] = input.nextLine();
+                        System.out.println("Enter new ccm: ");
+                        strArrayLuxury[5] = String.valueOf(input.nextInt());
                         break;
                     case 7:
-                        System.out.println("Enter new air condition: ");
+                        System.out.println("Enter new automatic gear: ");
                         strArrayLuxury[6] = input.nextLine();
                         break;
                     case 8:
-                        System.out.println("Enter new cruise control: ");
+                        System.out.println("Enter new air condition: ");
                         strArrayLuxury[7] = input.nextLine();
                         break;
                     case 9:
-                        System.out.println("Enter new seats (>=7): ");
-                        int seat = input.nextInt();
-                        strArrayLuxury[8] = String.valueOf(seat);
+                        System.out.println("Enter new cruise control: ");
+                        strArrayLuxury[8] = String.valueOf(input.nextInt());
+                        break;
+                    case 10:
+                        System.out.println("Enter new leather seat: ");
+                        strArrayLuxury[9] = input.nextLine();
                         break;
 
                 }
+                Car luxuryCar = new Luxury("Luxury", strArrayLuxury[1], strArrayLuxury[2], strArrayLuxury[3], strArrayLuxury[4], Integer.parseInt(strArrayLuxury[5]),
+                        Integer.parseInt(strArrayLuxury[6]), strArrayLuxury[7], strArrayLuxury[8], strArrayLuxury[9], strArrayLuxury[10]);
+                cars.set(picked - 1, luxuryCar);
                 break;
             case "Sport":
                 for (int j = 0; j < 7; j++) {
@@ -366,26 +373,20 @@ public class CarHandler {
                         break;
                     case 5:
                         System.out.println("Enter new odometer: ");
-                        int odometer = input.nextInt();
-                        strArraySport[4] = String.valueOf(odometer);
+                        strArraySport[4] = String.valueOf(input.nextInt());
                         break;
                     case 6:
                         System.out.println("Enter new manual gear: ");
                         strArraySport[5] = input.nextLine();
                         break;
                     case 7:
-                        System.out.println("Enter new air condition: ");
-                        strArraySport[6] = input.nextLine();
-                        break;
-                    case 8:
-                        System.out.println("Enter new cruise control: ");
-                        strArraySport[7] = input.nextLine();
-                        break;
-                    case 9:
-                        System.out.println("Enter new seats (>=7): ");
-                        strArraySport[8] = input.nextLine();
+                        System.out.println("Enter new hp: ");
+                        strArraySport[6] = String.valueOf(input.nextInt());
                         break;
                 }
+                Car sportCar = new Sport("Sport", strArraySport[1], strArraySport[2], strArraySport[3], strArraySport[4],
+                        Integer.parseInt(strArraySport[5]), strArraySport[6], Integer.parseInt(strArraySport[7]));
+                cars.set(picked - 1, sportCar);
                 break;
         }
         FileProcessor.writeToCarFile(cars);
