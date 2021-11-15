@@ -11,6 +11,6 @@ public class Sport extends Car{
 
     @Override
     public String toString() {
-        return (super.toString() + "\nmanualGear " + manualGear + "\nhp " + hp);
+        return (super.toString() + "\nmanualGear: " + manualGear + "\nHP: " + hp);
     }
 }
