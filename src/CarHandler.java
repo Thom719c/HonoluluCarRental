@@ -232,7 +232,7 @@ public class CarHandler {
         switch (cars.get(picked - 1).type) {
             case "Family":
                 for (int j = 0; j < 9; j++) {
-                    sArr[picked - 1] += strArr[j] +  "\n";
+                    sArr[picked - 1] += strArr[j] + "\n";
                     strArrayFamily = sArr[picked - 1].split("\n");
                 }
                 for (int i = 0; i < strArrayFamily.length; i++) {
@@ -240,7 +240,8 @@ public class CarHandler {
                 }
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfo = input.nextInt();
-                switch (pickInfo){
+                input.nextLine();
+                switch (pickInfo) {
                     case 1:
                         System.out.println("Enter new first brand: ");
                         strArrayFamily[0] = input.nextLine();
@@ -259,7 +260,7 @@ public class CarHandler {
                         break;
                     case 5:
                         System.out.println("Enter new odometer: ");
-                        strArrayFamily[4] = input.nextLine();
+                        strArrayFamily[4] = String.valueOf(input.nextInt());
                         break;
                     case 6:
                         System.out.println("Enter new manual gear: ");
@@ -275,10 +276,12 @@ public class CarHandler {
                         break;
                     case 9:
                         System.out.println("Enter new seats (>=7): ");
-                        strArrayFamily[8] = input.nextLine();
+                        strArrayFamily[8] = String.valueOf(input.nextInt());
                         break;
-
                 }
+                /*Car familyCar = new Family("Family", strArrayFamily[0], strArrayFamily[1], strArrayFamily[2], strArrayFamily[3], Integer.parseInt(strArrayFamily[4]),
+                        strArrayFamily[5], strArrayFamily[6], strArrayFamily[7], Integer.parseInt(strArrayFamily[8]));
+                cars.set(picked - 1, familyCar);*/
                 break;
             case "Luxury":
                 for (int j = 0; j < 10; j++) {
