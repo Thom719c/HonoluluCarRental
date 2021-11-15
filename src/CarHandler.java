@@ -65,7 +65,7 @@ public class CarHandler {
                 for (Car s : cars) {
                     System.out.println(s + "\n**************************************************");
                 }
-                FileProcessor.writeToFile(cars);
+                FileProcessor.writeToCarFile(cars);
                 break;
             case 2: //11 inputs
                 for (int i = 0; i < cars.size(); i++) {

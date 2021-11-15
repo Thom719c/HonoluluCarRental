@@ -1,4 +1,5 @@
 public abstract class Honolulu_Car_Rental {
+    String customer;
     String driverName;
     String address;
     int zipCode;
@@ -7,7 +8,8 @@ public abstract class Honolulu_Car_Rental {
     int phone;
     String email;
 
-    public Honolulu_Car_Rental(String dN, String a, int zC, String c, int mP, int p, String e) {
+    public Honolulu_Car_Rental(String customer, String dN, String a, int zC, String c, int mP, int p, String e) {
+        this.customer = customer;
         driverName = dN;
         address = a;
         zipCode = zC;
@@ -15,5 +17,9 @@ public abstract class Honolulu_Car_Rental {
         mobilePhone= mP;
         phone = p;
         email = e;
+    }
+    public String toString(){
+        return("customer: " + customer + "\ndriver name: " + driverName + "\naddress: " + address + "\nzipcode: " + zipCode + "\ncity: " + city +
+                "\nmobile phone: " + mobilePhone + "\nphone: " + phone + "\nemail: " + email);
     }
 }
