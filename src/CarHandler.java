@@ -87,7 +87,7 @@ public class CarHandler {
         }
     }
 
-    public void addCarMenu(Scanner input) throws FileNotFoundException {
+    public void addCarMenu(Scanner input) throws IOException {
         System.out.println("1. Family car");
         System.out.println("2. Luxury car");
         System.out.println("3. Sport car");
@@ -109,6 +109,7 @@ public class CarHandler {
             default:
                 System.out.println("Not valid number");
         }
+        FileProcessor.writeToCarFile(cars);
     }
 
     public ArrayList<Car> addFamily(Scanner input) {

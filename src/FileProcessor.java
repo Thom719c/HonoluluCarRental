@@ -22,8 +22,7 @@ public class FileProcessor {
         }
         readCars.close();
     }
-    /*
-    public static void writeToFileT(ArrayList<Car> cars) throws IOException {
+    /*public static void writeToFileT(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
         int tempI = 0;
@@ -38,8 +37,7 @@ public class FileProcessor {
         bWrite.write(carsOut);
 
         bWrite.close();
-    }
-    */
+    }*/
     public static void writeToCarFile(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
