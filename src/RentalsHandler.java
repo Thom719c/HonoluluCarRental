@@ -42,7 +42,7 @@ public class RentalsHandler {
                 for (Honolulu_Car_Rental s : rentals) {
                     System.out.println(s + "\n**************************************************");
                 }
-                FileProcessor.writeToRentalFile(rentals);
+                //FileProcessor.writeToRentalFile(rentals);
                 break;
             case 2: //11 inputs
                 for (int i = 0; i < rentals.size(); i++) {
