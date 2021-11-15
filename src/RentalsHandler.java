@@ -43,7 +43,7 @@ public class RentalsHandler {
                 for (Honolulu_Car_Rental s : rentals) {
                     System.out.println(s + "\n**************************************************");
                 }
-                //FileProcessor.writeToRentalFile(rentals);
+                FileProcessor.writeToRentalFile(rentals);
                 break;
             case 2: //11 inputs
                 showRentalType("Private");
@@ -84,6 +84,7 @@ public class RentalsHandler {
             default:
                 System.out.println("Not valid number");
         }
+        FileProcessor.writeToRentalFile(rentals);
     }
 
     public ArrayList<Honolulu_Car_Rental> addPrivate(Scanner input) {

@@ -78,7 +78,20 @@ public class FileProcessor {
     }
 
     public static void updateRentalArrayList(ArrayList<Honolulu_Car_Rental> rentals) throws FileNotFoundException {
-
+        Scanner readRentals = new Scanner(new File("Files/Rentals"));
+        while (readRentals.hasNextLine()) {
+            String[] rentalInfo = readRentals.nextLine().split(", ");
+            if (rentalInfo[0].equals("Private")) {
+                Honolulu_Car_Rental privateRental = new Private_Rentals("Private", rentalInfo[1], rentalInfo[2], Integer.parseInt(rentalInfo[3]), rentalInfo[4], Integer.parseInt(rentalInfo[5]), Integer.parseInt(rentalInfo[6]), rentalInfo[7], Integer.parseInt(rentalInfo[8]), rentalInfo[9]);
+                rentals.add(privateRental);
+            } else if (rentalInfo[0].equals("Company")) {
+                Honolulu_Car_Rental companyRental = new Company_Rentals("Company", rentalInfo[1], rentalInfo[2], Integer.parseInt(rentalInfo[3]), rentalInfo[4], Integer.parseInt(rentalInfo[5]), Integer.parseInt(rentalInfo[6]), rentalInfo[7], rentalInfo[8], rentalInfo[9], Integer.parseInt(rentalInfo[10]), Integer.parseInt(rentalInfo[11]));
+                rentals.add(companyRental);
+            }
+        }
+        readRentals.close();
+    }
+    public static void writeToRentalFile(ArrayList<Honolulu_Car_Rental> rentals) {
     }
 
     public static void writeToRentalFile(ArrayList<Honolulu_Car_Rental> rentals) throws IOException {
