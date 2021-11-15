@@ -1,6 +1,4 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.util.*;
 
 public class RentalsHandler {

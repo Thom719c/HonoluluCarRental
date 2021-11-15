@@ -1,5 +1,3 @@
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
 public class Luxury extends Car{
     int ccm; // > 3000
     String automaticGear;
