@@ -192,7 +192,7 @@ public class CarHandler {
         System.out.println("Enter corresponding number for removing: ");
         int removeChoice = input.nextInt();
         cars.remove(removeChoice - 1);
-        FileProcessor.writeToFile(cars);
+        FileProcessor.writeToCarFile(cars);
     }
 
     public void setCars(ArrayList<Car> cars) {

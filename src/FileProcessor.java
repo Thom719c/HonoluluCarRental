@@ -56,7 +56,7 @@ public class FileProcessor {
         bWrite.close();
     }*/
 
-    public static void writeToFile(ArrayList<Car> cars) throws IOException {
+    public static void writeToCarFile(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
 
