@@ -48,7 +48,7 @@ public class CarHandler {
         return cars;
     }
 
-    public void showCars(Scanner input) throws IOException {
+    public void showCars(Scanner input) {
         System.out.println("1. Show all \n2. Show family car \n3. Show luxury car \n4. Show sport car \n5. Exit");
         int showType = input.nextInt();
         switch (showType) {
