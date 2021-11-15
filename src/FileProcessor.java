@@ -78,9 +78,7 @@ public class FileProcessor {
                     break;
             }
         }
-
         bWrite.write(carsOut);
-
         bWrite.close();
     }
 }

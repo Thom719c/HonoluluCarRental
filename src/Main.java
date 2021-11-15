@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
         CarHandler carHandler = new CarHandler();
-        //carHandler.createCars();
+        carHandler.createCars();
         FileProcessor.updateArrayList(carHandler.getCars());
 
         runHonoluluCarRentalProgram(carHandler);
