@@ -22,8 +22,7 @@ public class FileProcessor {
         }
         readCars.close();
     }
-    /*
-    public static void writeToFileT(ArrayList<Car> cars) throws IOException {
+    /*public static void writeToFileT(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
         int tempI = 0;
@@ -38,8 +37,7 @@ public class FileProcessor {
         bWrite.write(carsOut);
 
         bWrite.close();
-    }
-    */
+    }*/
     public static void writeToCarFile(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
@@ -53,21 +51,21 @@ public class FileProcessor {
             String[] strArr = s.split("\n");
             switch (cars.get(i).type) {
                 case "Family":
-                    for (int j = 0; j < cars.size()-2; j++) {
+                    for (int j = 0; j < 9; j++) {
                         String newLastFamily = strArr[j].substring(strArr[j].indexOf(": ") + 2);
                         sArr[i] += newLastFamily + ", ";
                     }
                     carsOut += "Family, " + sArr[i] + "\n";
                     break;
                 case "Luxury":
-                    for (int j = 0; j < cars.size()-1; j++) {
+                    for (int j = 0; j < 10; j++) {
                         String newLastLuxury = strArr[j].substring(strArr[j].indexOf(": ") + 2);
                         sArr[i] += newLastLuxury + ", ";
                     }
                     carsOut += "Luxury, " + sArr[i] + "\n";
                     break;
                 case "Sport":
-                    for (int j = 0; j < cars.size()-4; j++) {
+                    for (int j = 0; j < 7; j++) {
                         String newLastSport = strArr[j].substring(strArr[j].indexOf(": ") + 2);
                         sArr[i] += newLastSport + ", ";
                     }

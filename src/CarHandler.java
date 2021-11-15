@@ -1,6 +1,4 @@
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.Array;
+import java.io.*;
 import java.util.*;
 
 public class CarHandler {
@@ -50,7 +48,7 @@ public class CarHandler {
         return cars;
     }
 
-    public void showCars(Scanner input) throws IOException {
+    public void showCars(Scanner input) {
         System.out.println("1. Show all \n2. Show family car \n3. Show luxury car \n4. Show sport car \n5. Exit");
         int showType = input.nextInt();
         switch (showType) {
@@ -87,7 +85,7 @@ public class CarHandler {
         }
     }
 
-    public void addCarMenu(Scanner input) throws FileNotFoundException {
+    public void addCarMenu(Scanner input) throws IOException {
         System.out.println("1. Family car");
         System.out.println("2. Luxury car");
         System.out.println("3. Sport car");
@@ -109,6 +107,7 @@ public class CarHandler {
             default:
                 System.out.println("Not valid number");
         }
+        FileProcessor.writeToCarFile(cars);
     }
 
     public ArrayList<Car> addFamily(Scanner input) {
