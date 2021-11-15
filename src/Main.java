@@ -5,9 +5,10 @@ public class Main {
     public static void main(String[] args) throws IOException {
         CarHandler carHandler = new CarHandler();
         RentalsHandler rentalsHandler = new RentalsHandler();
-        carHandler.createCars();
-        rentalsHandler.createRentals();
+        //carHandler.createCars();
+        //rentalsHandler.createRentals();
         FileProcessor.updateCarArrayList(carHandler.getCars());
+        FileProcessor.updateRentalArrayList(rentalsHandler.getRentals());
 
         runHonoluluCarRentalProgram(carHandler, rentalsHandler);
     }
@@ -58,6 +59,7 @@ public class Main {
                 case 4:
                     break;
                 case 5:
+                    carHandler.editCar(input);
                     break;
                 default:
                     System.out.println();

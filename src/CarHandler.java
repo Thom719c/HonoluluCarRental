@@ -201,4 +201,80 @@ public class CarHandler {
     public ArrayList<Car> getCars() {
         return cars;
     }
+
+    public void editCar(Scanner input) {
+        //int index = 0;
+        //Car familyCar = new Family("Family", input.next(), input.next(), input.next(), input.next(), input.nextInt(), input.next(), input.next(), input.next(), input.nextInt());
+        //cars.set(index, familyCar);
+        System.out.println("1. Family \n2. Luxury \n3. Sport \nEnter number for which you want to change info about: ");
+        int editChoice = input.nextInt();
+        if (editChoice == 1) {
+            showCarType("Family");
+
+        } else if (editChoice == 2) {
+            showCarType("Luxury");
+        } else {
+            showCarType("Sport");
+        }
+        System.out.println("Enter number for which car you want to change info about: ");
+        int picked = input.nextInt();
+
+        int tempI = 1;
+        String[] strArrayFamily = new String[9];
+        String[] strArrayLuxury = new String[10];
+        String[] strArraySport = new String[7];
+        String[] sArr = new String[cars.size()];
+        Arrays.fill(sArr, "");
+        System.out.println(cars.get(picked - 1));
+
+        String s = String.valueOf(cars.get(picked - 1));
+        String[] strArr = s.split("\n");
+        switch (cars.get(picked - 1).type) {
+            case "Family":
+                for (int j = 0; j < 9; j++) {
+                    sArr[picked - 1] += strArr[j] +  "\n";
+                    strArrayFamily = sArr[picked - 1].split("\n");
+                }
+                for (int i = 0; i < strArrayFamily.length; i++) {
+                    System.out.println("Nr. " + (i + 1) + ": " + strArrayFamily[i]);
+                }
+                System.out.println("Enter number for which info you want to change: ");
+                int pickInfo = input.nextInt();
+                switch (pickInfo){
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    case 8:
+                        break;
+                    case 9:
+                        break;
+
+                }
+                break;
+            case "Luxury":
+                for (int j = 0; j < 10; j++) {
+                    String newLastLuxury = strArr[j].substring(strArr[j].indexOf(": ") + 2);
+                    sArr[picked - 1] += newLastLuxury + ", ";
+                }
+                break;
+            case "Sport":
+                for (int j = 0; j < 7; j++) {
+                    String newLastSport = strArr[j].substring(strArr[j].indexOf(": ") + 2);
+                    sArr[picked - 1] += newLastSport + ", ";
+                }
+                break;
+        }
+
+    }
 }
