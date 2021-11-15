@@ -136,11 +136,12 @@ public class RentalsHandler {
         int companyPhoneNumber = input.nextInt();
         System.out.println("Enter company registration number (6 digits): ");
         int crn = input.nextInt();
-        while (crn = "\d\d\d\d\d\d") {
+        /*while (crn = "\d\d\d\d\d\d") {
             System.out.println("Invalid number of seats" + "\nEnter how many seats (Min. 7): ");
             crn = input.nextInt();
-        }
-        Honolulu_Car_Rental companyCustomer = new Company_Rentals("Private", driverName, address, zipCode, city, mobilePhone, phone, email, );
+        }*/
+        Honolulu_Car_Rental companyCustomer = new Company_Rentals("Private", driverName, address, zipCode, city,
+                mobilePhone, phone, email,companyName, companyAddress, companyPhoneNumber, crn);
         rentals.add(companyCustomer);
         return rentals;
     }
