@@ -242,6 +242,8 @@ public class CarHandler {
                 int pickInfo = input.nextInt();
                 switch (pickInfo){
                     case 1:
+                        System.out.println("Enter the name you want to change to: ");
+                        strArrayFamily[0] = input.next();
                         break;
                     case 2:
                         break;
