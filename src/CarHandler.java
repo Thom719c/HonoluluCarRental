@@ -232,7 +232,7 @@ public class CarHandler {
         switch (cars.get(picked - 1).type) {
             case "Family":
                 for (int j = 0; j < 9; j++) {
-                    sArr[picked - 1] += strArr[j] +  "\n";
+                    sArr[picked - 1] += strArr[j] + "\n";
                     strArrayFamily = sArr[picked - 1].split("\n");
                 }
                 for (int i = 0; i < strArrayFamily.length; i++) {
@@ -243,8 +243,7 @@ public class CarHandler {
                 switch (pickInfoF){
                     case 1:
                         System.out.println("Enter new first brand: ");
-                        String brand = input.next();
-                        strArrayFamily[0] = brand;
+                        strArrayFamily[0] = input.nextLine();
                         break;
                     case 2:
                         System.out.println("Enter new model: ");
@@ -260,8 +259,7 @@ public class CarHandler {
                         break;
                     case 5:
                         System.out.println("Enter new odometer: ");
-                        int odometer = input.nextInt();
-                        strArrayLuxury[4] = String.valueOf(odometer);
+                        strArrayFamily[4] = String.valueOf(input.nextInt());
                         break;
                     case 6:
                         System.out.println("Enter new manual gear: ");
@@ -277,8 +275,7 @@ public class CarHandler {
                         break;
                     case 9:
                         System.out.println("Enter new seats (>=7): ");
-                        int seat = input.nextInt();
-                        strArrayLuxury[8] = String.valueOf(seat);
+                        strArrayFamily[8] = String.valueOf(input.nextInt());
                         break;
 
                 }
