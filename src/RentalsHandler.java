@@ -43,7 +43,6 @@ public class RentalsHandler {
                 for (Honolulu_Car_Rental s : rentals) {
                     System.out.println(s + "\n**************************************************");
                 }
-                FileProcessor.writeToRentalFile(rentals);
                 break;
             case 2: //11 inputs
                 showRentalType("Private");
@@ -160,5 +159,13 @@ public class RentalsHandler {
         int removeChoice = input.nextInt();
         rentals.remove(removeChoice - 1);
         FileProcessor.writeToRentalFile(rentals);
+    }
+
+    public ArrayList<Honolulu_Car_Rental> getRentals() {
+        return rentals;
+    }
+
+    public void setRentals(ArrayList<Honolulu_Car_Rental> rentals) {
+        this.rentals = rentals;
     }
 }
