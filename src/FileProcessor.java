@@ -3,7 +3,6 @@ import java.util.*;
 
 public class FileProcessor {
     public static void updateArrayList(ArrayList<Car> cars) throws FileNotFoundException {
-
         Scanner readCars = new Scanner(new File("Files/Cars"));
         while (readCars.hasNextLine()) {
             String[] carInfo = readCars.nextLine().split(", ");
@@ -24,48 +23,91 @@ public class FileProcessor {
         readCars.close();
     }
 
+    public static void writeToFileT(ArrayList<Car> cars) throws IOException {
+        FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
+        BufferedWriter bWrite = new BufferedWriter(writeFile);
+        int tempI = 0;
+        String carsOut = "";
+        for (String s : cars.toString().split("\n")) {
+            s = s.substring(s.indexOf(": ") + 2);
+            s = s.replace(", brand: ", "\n");   //s = s.replace("brand: ", "\n");
+            carsOut += s + ", ";
+            tempI++;
+        }
+
+        bWrite.write(carsOut);
+
+        bWrite.close();
+    }
+
+    /*public static void writeToFile(ArrayList<Car> cars) throws IOException {
+        FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
+        BufferedWriter bWrite = new BufferedWriter(writeFile);
+
+        String carsOut = "";
+        for (String s : cars.toString().split("\n")) {
+            s = s.substring(s.indexOf(": ") + 2);
+            s = s.replace(", brand: ", "\n");
+            //s = s.replace("brand: ", "\n");
+            carsOut += s + ", ";
+        }
+        bWrite.write(carsOut);
+
+        bWrite.close();
+    }*/
+
     public static void writeToFile(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
 
         String carsOut = "";
+        String[] sArr = new String[cars.size()];
+        Arrays.fill(sArr, "");
+        /*
+        String cFOut = "";
+        String cLOut = "";
+        String cSOut = "";
 
-        for (int i = 0; i < cars.size(); ++i) {
-            if (cars.get(i).type.equals("Family")) {
-                System.out.println(cars.get(i));
-                //carsOut += cars.get(i);
-            }
-            if (cars.get(i).type.equals("Family")) {
-                carsOut += cars.get(i).type + ", " + cars.get(i).brand + cars.get(i).model + cars.get(i).fuelType + cars.get(i).registration + cars.get(i).odometer /*+ familyCars.get(i).manualGear + familyCars.get(i).airCondition + familyCars.get(i).cruiseControl + familyCars.get(i).seat*/ + "\n";
-                System.out.println("FamilyJoin");
+        String[] sFArr = new String[cars.size()];
+        String[] sLArr = new String[cars.size()];
+        String[] sSrr = new String[cars.size()];
+        Arrays.fill(sFArr, "");
+        Arrays.fill(sLArr, "");
+        Arrays.fill(sSrr, "");*/
+
+        for (int i = 0; i < cars.size(); i++) {
+            String s = String.valueOf(cars.get(i));
+            String[] strArr = s.split("\n");
+            System.out.println(cars.get(i).type);
+            switch (cars.get(i).type) {
+                case "Family":
+                    for (int j = 0; j < 9; j++) {
+                        String newLastFamily = strArr[j].substring(strArr[j].indexOf(": ") + 2);
+                        sArr[i] += newLastFamily + ", ";
+                    }
+                    carsOut += "Family, " + sArr[i] + "\n";
+                    System.out.println(carsOut);
+                    break;
+                case "Luxury":
+                    for (int j = 0; j < 10; j++) {
+                        String newLastLuxury = strArr[j].substring(strArr[j].indexOf(": ") + 2);
+                        sArr[i] += newLastLuxury + ", ";
+                    }
+                    carsOut += "Luxury, " + sArr[i] + "\n";
+                    System.out.println(carsOut);
+                    break;
+                case "Sport":
+                    for (int j = 0; j < 7; j++) {
+                        String newLastSport = strArr[j].substring(strArr[j].indexOf(": ") + 2);
+                        sArr[i] += newLastSport + ", ";
+                    }
+                    carsOut += "Sport, " + sArr[i] + "\n";
+                    break;
             }
         }
-        bWrite.write(carsOut);
-        bWrite.close();
-    }
-
-    public static void writeToFileTest(ArrayList<Car> cars) throws IOException {
-        FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
-        BufferedWriter bWrite = new BufferedWriter(writeFile);
-
-        String carsOut = "";
-
-        Scanner readCars = new Scanner(new File("Files/Cars"));
-
-//        for (int i = 0; i < cars.size(); i++){
-//
-//            String[] carInfo;
-//            cars.get(i);
-//            if (carInfo[0].equals("Family")) {
-//
-//            } else if (carInfo[0].equals("Luxury")) {
-//
-//            } else if (carInfo[0].equals("Sport")) {
-//
-//            }
-//        }
 
         bWrite.write(carsOut);
+
         bWrite.close();
     }
 }

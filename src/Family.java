@@ -16,7 +16,7 @@ public class Family extends Car {
 
     @Override
     public String toString() {
-        return (super.toString() + "\nmanual gear " + manualGear +
-                "\nair condition " + airCondition + "\ncruise control " + cruiseControl + "\nseats " + seat);
+        return (super.toString() + "\nmanual gear: " + manualGear +
+                "\nair condition: " + airCondition + "\ncruise control: " + cruiseControl + "\nseats: " + seat);
     }
 }

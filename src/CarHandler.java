@@ -6,10 +6,6 @@ import java.util.*;
 public class CarHandler {
     private ArrayList<Car> cars = new ArrayList<>();
 
-    //private ArrayList<Family> familyCars = new ArrayList<>();
-    //private ArrayList<Luxury> luxuryCars;
-    //private ArrayList<Sport> sportCars;
-
     public ArrayList<Car> createCars() {
         //Family
         Car toyota1 = new Family("Family", "Toyota", "Proace Cyty Verso Shuttle", "Benzin", "06-2021", 5000,
@@ -55,43 +51,39 @@ public class CarHandler {
     }
 
     public void showCars(Scanner input) throws IOException {
-//        for (Car s : cars) {
-//            System.out.println(s + "\n********************************************************************************");
-//        }
-        System.out.println("1. Show all \n2. Family car \n3. Luxury car \n4. Sport car \n5. Exit");
+        System.out.println("1. Show all \n2. Show family car \n3. Show luxury car \n4. Show sport car \n5. Exit");
         int showType = input.nextInt();
         switch (showType) {
-            case 1: //10 inputs
+            case 1: //Show all
                 for (Car s : cars) {
                     System.out.println(s + "\n**************************************************");
                 }
-                FileProcessor.writeToFile(cars);
                 break;
-            case 2: //11 inputs
-                for (int i = 0; i < cars.size(); i++) {
-                    for (Car s : cars) {
-                        if (s.type.equals("Family")) {
-                            System.out.printf("Nr. %-2d: %s %s \n", (i + 1), cars.get(i).brand, cars.get(i).model);
-                        }
-                    }
-                }
-
+            case 2: //Family
+                showCarType("Family");
                 break;
-            case 3: //8 inputs
-                for (Car s : cars) {
-                    if (s.type.equals("Luxury")) {
-                        System.out.println(s + "\n**************************************************");
-                    }
-                }
+            case 3: //Luxury
+                showCarType("Luxury");
                 break;
-            case 4:
-                for (Car s : cars) {
+            case 4: //Sport
+                showCarType("Sport");
+                /*for (Car s : cars) {
                     if (s.type.equals("Sport")) {
                         System.out.println(s + "\n**************************************************");
                     }
-                }
+                }*/
                 break;
             default:
+        }
+    }
+
+    public void showCarType(String carType) {
+        int tempI = 1;
+        for (Car s : cars) {
+            if (s.type.equals(carType)) {
+                System.out.printf("Nr. %-2d: %s %s \n", tempI, s.brand, s.model);
+                tempI++;
+            }
         }
     }
 
@@ -146,6 +138,7 @@ public class CarHandler {
         cars.add(familyCar);
         return cars;
     }
+
     public ArrayList<Car> addLuxury(Scanner input) {
         System.out.println("Enter brand: ");
         String brand = input.nextLine();
@@ -171,6 +164,7 @@ public class CarHandler {
         cars.add(luxuryCar);
         return cars;
     }
+
     public ArrayList<Car> addSport(Scanner input) {
         System.out.println("Enter brand: ");
         String brand = input.next();
@@ -191,13 +185,14 @@ public class CarHandler {
         return cars;
     }
 
-    public void removeCar(Scanner input) {
+    public void removeCar(Scanner input) throws IOException {
         for (int i = 0; i < cars.size(); i++) {
             System.out.printf("Nr. %-2d: %s %s \n", (i + 1), cars.get(i).brand, cars.get(i).model);
         }
         System.out.println("Enter corresponding number for removing: ");
         int removeChoice = input.nextInt();
         cars.remove(removeChoice - 1);
+        FileProcessor.writeToFile(cars);
     }
 
     public void setCars(ArrayList<Car> cars) {

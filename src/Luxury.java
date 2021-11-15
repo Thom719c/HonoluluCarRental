@@ -20,7 +20,7 @@ public class Luxury extends Car{
     @Override
     public String toString() {
         return (super.toString() +
-                "\nccm " + ccm + "\nautomaticGear " + automaticGear + "\nairCondition " + airCondition +
-                "\ncruiseControl " + cruiseControl + "\nleatherSeat " + leatherSeat);
+                "\nccm: " + ccm + "\nautomaticGear: " + automaticGear + "\nairCondition: " + airCondition +
+                "\ncruiseControl: " + cruiseControl + "\nleatherSeat: " + leatherSeat);
     }
 }
