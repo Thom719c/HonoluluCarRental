@@ -65,11 +65,6 @@ public class CarHandler {
                 break;
             case 4: //Sport
                 showCarType("Sport");
-                /*for (Car s : cars) {
-                    if (s.type.equals("Sport")) {
-                        System.out.println(s + "\n**************************************************");
-                    }
-                }*/
                 break;
             default:
         }
@@ -224,7 +219,6 @@ public class CarHandler {
         String[] strArraySport = new String[7];
         String[] sArr = new String[cars.size()];
         Arrays.fill(sArr, "");
-        System.out.println(cars.get(picked - 1));
 
         String s = String.valueOf(cars.get(picked - 1));
         String[] strArr = s.split("\n");
@@ -239,7 +233,6 @@ public class CarHandler {
                     String newLastFamily = strArrayFamily[i].substring(strArrayFamily[i].indexOf(": ") + 2);
                     strArrayFamily[i] = newLastFamily;
                 }
-                //System.out.println(Arrays.toString(strArrayFamily));
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoF = input.nextInt();
                 input.nextLine();
@@ -292,6 +285,8 @@ public class CarHandler {
                 }
                 for (int i = 0; i < strArrayLuxury.length; i++) {
                     System.out.println("Nr. " + (i + 1) + ": " + strArrayLuxury[i]);
+                    String newLastLuxury = strArrayLuxury[i].substring(strArrayLuxury[i].indexOf(": ") + 2);
+                    strArrayLuxury[i] = newLastLuxury;
                 }
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoL = input.nextInt();
@@ -339,8 +334,8 @@ public class CarHandler {
                         break;
 
                 }
-                Car luxuryCar = new Luxury("Luxury", strArrayLuxury[1], strArrayLuxury[2], strArrayLuxury[3], strArrayLuxury[4], Integer.parseInt(strArrayLuxury[5]),
-                        Integer.parseInt(strArrayLuxury[6]), strArrayLuxury[7], strArrayLuxury[8], strArrayLuxury[9], strArrayLuxury[10]);
+                Car luxuryCar = new Luxury("Luxury", strArrayLuxury[0], strArrayLuxury[1], strArrayLuxury[2], strArrayLuxury[3], Integer.parseInt(strArrayLuxury[4]),
+                        Integer.parseInt(strArrayLuxury[5]), strArrayLuxury[6], strArrayLuxury[7], strArrayLuxury[8], strArrayLuxury[9]);
                 cars.set(picked - 1, luxuryCar);
                 break;
             case "Sport":
@@ -350,6 +345,8 @@ public class CarHandler {
                 }
                 for (int i = 0; i < strArraySport.length; i++) {
                     System.out.println("Nr. " + (i + 1) + ": " + strArraySport[i]);
+                    String newLastSport = strArraySport[i].substring(strArraySport[i].indexOf(": ") + 2);
+                    strArraySport[i] = newLastSport;
                 }
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoS = input.nextInt();
@@ -384,8 +381,8 @@ public class CarHandler {
                         strArraySport[6] = String.valueOf(input.nextInt());
                         break;
                 }
-                Car sportCar = new Sport("Sport", strArraySport[1], strArraySport[2], strArraySport[3], strArraySport[4],
-                        Integer.parseInt(strArraySport[5]), strArraySport[6], Integer.parseInt(strArraySport[7]));
+                Car sportCar = new Sport("Sport", strArraySport[0], strArraySport[1], strArraySport[2], strArraySport[3],
+                        Integer.parseInt(strArraySport[4]), strArraySport[5], Integer.parseInt(strArraySport[6]));
                 cars.set(picked - 1, sportCar);
                 break;
         }
