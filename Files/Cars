@@ -1,14 +1,11 @@
 Family, Toyota, Proace Cyty Verso Shuttle, Benzin, 06-2021, 5000, 5. gear manual, Yes, Yes, 7, 
 Family, Toyota, Verso, Diesel, 02/2012, 171000, Yes, Yes, Yes, 7, 
 Family, Nissan, Qashqai, Diesel, 02/2012, 152000, Yes, Yes, Yes, 7, 
-Family, Nissan, e-NV200 Evalia Premium, Diesel, 05/2019, 46000, Yes, Yes, Yes, 7, 
-Luxury, Bentley, Continental GT, Benzin, 02/2013, 40000, 5998, Yes, Yes, Yes, Black Leather
-Luxury, Rolls-Royce, Phantom, Benzin, 06/2013, 20000, 6749, Yes, Yes, Yes, White Leather
-Luxury, Rolls-Royce, Ghost, Benzin, 05/2017, 22500, 6592, Yes, Yes, Yes, Brown Leather
-Luxury, Porsche, Panamera Turbo S Executive, Benzin, 09/2018, 34200, 3996, Yes, Yes, Yes, Black Leather
-Sport, Ford Mustang, Shelby GT500R Eleanor, Benzin, 12/1967, 13000, Yes, 550
-Sport, Porsche, 911 Turbo S, Benzin, 06/2014, 35000, Yes, 560
-Sport, Ford Mustang, Shelby GT500R Eleanor, Benzin, 12/1967, 13000, Yes, 550
-Sport, Porsche, 911 Turbo S, Benzin, 06/2014, 35000, Yes, 560
-Sport, Nissan, GT-R R35, Benzin, 12/2021, 12000, No, 565
-
+Family, Nissan, e-NV200 Evalia Premium, Diesel, 05/2019, 46000, Yes, Yes, Yes, 8, 
+Luxury, Bentley, Continental GT, Benzin, 02/2013, 40000, 5998, Yes, Yes, Yes, Black Leather, 
+Luxury, Rolls-Royce, Phantom, Benzin, 06/2013, 20000, 6749, Yes, Yes, Yes, White Leather, 
+Luxury, Rolls-Royce, Ghost, Benzin, 05/2017, 22500, 6592, Yes, Yes, Yes, Brown Leather, 
+Luxury, Porsche, Panamera Turbo S Executive, Benzin, 09/2018, 34200, 3996, Yes, Yes, Yes, Black Leather, 
+Sport, Ford Mustang, Shelby GT500R Eleanor, Benzin, 12/1967, 13000, Yes, 550, 
+Sport, Porsche, 911 Turbo S, Benzin, 06/2014, 35000, Yes, 560, 
+Sport, Nissan, GT-R R35, Benzin, 12/2021, 12000, No, 565, 

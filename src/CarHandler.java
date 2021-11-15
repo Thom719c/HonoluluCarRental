@@ -202,7 +202,7 @@ public class CarHandler {
         return cars;
     }
 
-    public void editCar(Scanner input) {
+    public void editCar(Scanner input) throws IOException {
         //int index = 0;
         //Car familyCar = new Family("Family", input.next(), input.next(), input.next(), input.next(), input.nextInt(), input.next(), input.next(), input.next(), input.nextInt());
         //cars.set(index, familyCar);
@@ -219,7 +219,6 @@ public class CarHandler {
         System.out.println("Enter number for which car you want to change info about: ");
         int picked = input.nextInt();
 
-        int tempI = 1;
         String[] strArrayFamily = new String[9];
         String[] strArrayLuxury = new String[10];
         String[] strArraySport = new String[7];
@@ -237,11 +236,14 @@ public class CarHandler {
                 }
                 for (int i = 0; i < strArrayFamily.length; i++) {
                     System.out.println("Nr. " + (i + 1) + ": " + strArrayFamily[i]);
+                    String newLastFamily = strArrayFamily[i].substring(strArrayFamily[i].indexOf(": ") + 2);
+                    strArrayFamily[i] = newLastFamily;
                 }
+                System.out.println(Arrays.toString(strArrayFamily));
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoF = input.nextInt();
                 input.nextLine();
-                switch (pickInfoF){
+                switch (pickInfoF) {
                     case 1:
                         System.out.println("Enter new first brand: ");
                         strArrayFamily[0] = input.nextLine();
@@ -278,12 +280,14 @@ public class CarHandler {
                         System.out.println("Enter new seats (>=7): ");
                         strArrayFamily[8] = String.valueOf(input.nextInt());
                         break;
-
                 }
+                Car familyCar = new Family("Family", strArrayFamily[0], strArrayFamily[1], strArrayFamily[2], strArrayFamily[3], Integer.parseInt(strArrayFamily[4]),
+                        strArrayFamily[5], strArrayFamily[6], strArrayFamily[7], Integer.parseInt(strArrayFamily[8]));
+                cars.set(picked - 1, familyCar);
                 break;
             case "Luxury":
                 for (int j = 0; j < 10; j++) {
-                    sArr[picked - 1] += strArr[j] +  "\n";
+                    sArr[picked - 1] += strArr[j] + "\n";
                     strArrayLuxury = sArr[picked - 1].split("\n");
                 }
                 for (int i = 0; i < strArrayLuxury.length; i++) {
@@ -292,7 +296,7 @@ public class CarHandler {
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoL = input.nextInt();
                 input.nextLine();
-                switch (pickInfoL){
+                switch (pickInfoL) {
                     case 1:
                         System.out.println("Enter new first brand: ");
                         strArrayLuxury[0] = input.nextLine();
@@ -336,57 +340,56 @@ public class CarHandler {
                 break;
             case "Sport":
                 for (int j = 0; j < 7; j++) {
-                    sArr[picked - 1] += strArr[j] +  "\n";
-                    strArrayFamily = sArr[picked - 1].split("\n");
+                    sArr[picked - 1] += strArr[j] + "\n";
+                    strArraySport = sArr[picked - 1].split("\n");
                 }
-                for (int i = 0; i < strArrayFamily.length; i++) {
-                    System.out.println("Nr. " + (i + 1) + ": " + strArrayFamily[i]);
+                for (int i = 0; i < strArraySport.length; i++) {
+                    System.out.println("Nr. " + (i + 1) + ": " + strArraySport[i]);
                 }
                 System.out.println("Enter number for which info you want to change: ");
                 int pickInfoS = input.nextInt();
                 input.nextLine();
-                switch (pickInfoS){
+                switch (pickInfoS) {
                     case 1:
                         System.out.println("Enter new first brand: ");
-                        strArrayFamily[0] = input.nextLine();
+                        strArraySport[0] = input.nextLine();
                         break;
                     case 2:
                         System.out.println("Enter new model: ");
-                        strArrayFamily[1] = input.nextLine();
+                        strArraySport[1] = input.nextLine();
                         break;
                     case 3:
                         System.out.println("Enter new fuel type: ");
-                        strArrayFamily[2] = input.nextLine();
+                        strArraySport[2] = input.nextLine();
                         break;
                     case 4:
                         System.out.println("Enter new registration: ");
-                        strArrayFamily[3] = input.nextLine();
+                        strArraySport[3] = input.nextLine();
                         break;
                     case 5:
                         System.out.println("Enter new odometer: ");
                         int odometer = input.nextInt();
-                        strArrayLuxury[4] = String.valueOf(odometer);
+                        strArraySport[4] = String.valueOf(odometer);
                         break;
                     case 6:
                         System.out.println("Enter new manual gear: ");
-                        strArrayFamily[5] = input.nextLine();
+                        strArraySport[5] = input.nextLine();
                         break;
                     case 7:
                         System.out.println("Enter new air condition: ");
-                        strArrayFamily[6] = input.nextLine();
+                        strArraySport[6] = input.nextLine();
                         break;
                     case 8:
                         System.out.println("Enter new cruise control: ");
-                        strArrayFamily[7] = input.nextLine();
+                        strArraySport[7] = input.nextLine();
                         break;
                     case 9:
                         System.out.println("Enter new seats (>=7): ");
-                        strArrayFamily[8] = input.nextLine();
+                        strArraySport[8] = input.nextLine();
                         break;
-
                 }
                 break;
         }
-
+        FileProcessor.writeToCarFile(cars);
     }
 }
