@@ -77,9 +77,39 @@ public class FileProcessor {
         bWrite.close();
     }
 
-    public static void writeToRentalFile(ArrayList<Honolulu_Car_Rental> rentals) {
-    }
     public static void updateRentalArrayList(ArrayList<Honolulu_Car_Rental> rentals) throws FileNotFoundException {
 
+    }
+
+    public static void writeToRentalFile(ArrayList<Honolulu_Car_Rental> rentals) throws IOException {
+        FileWriter writeFile = new FileWriter(new File("Files/Rentals"), false);
+        BufferedWriter bWrite = new BufferedWriter(writeFile);
+
+        String rentalsOut = "";
+        String[] sArr = new String[rentals.size()];
+        Arrays.fill(sArr, "");
+
+        for (int i = 0; i < rentals.size(); i++) {
+            String s = String.valueOf(rentals.get(i));
+            String[] strArr = s.split("\n");
+            switch (rentals.get(i).customer) {
+                case "Private":
+                    for (int j = 0; j < 9; j++) {
+                        String newLastPrivate = strArr[j].substring(strArr[j].indexOf(": ") + 2);
+                        sArr[i] += newLastPrivate + ", ";
+                    }
+                    rentalsOut += "Private, " + sArr[i] + "\n";
+                    break;
+                case "Company":
+                    for (int j = 0; j < 11; j++) {
+                        String newLastCompany = strArr[j].substring(strArr[j].indexOf(": ") + 2);
+                        sArr[i] += newLastCompany + ", ";
+                    }
+                    rentalsOut += "Company, " + sArr[i] + "\n";
+                    break;
+            }
+        }
+        bWrite.write(rentalsOut);
+        bWrite.close();
     }
 }
