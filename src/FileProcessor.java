@@ -22,6 +22,7 @@ public class FileProcessor {
         }
         readCars.close();
     }
+
     /*public static void writeToFileT(ArrayList<Car> cars) throws IOException {
         FileWriter writeFile = new FileWriter(new File("Files/Cars"), false);
         BufferedWriter bWrite = new BufferedWriter(writeFile);
@@ -122,5 +123,28 @@ public class FileProcessor {
         }
         bWrite.write(rentalsOut);
         bWrite.close();
+    }
+
+    public static void writeContractFile(Rental_Contract rental_contract, Honolulu_Car_Rental honolulu_car_rental, Car car) throws IOException {
+        int fnameCount = 1;
+
+
+        /*File file = new File("Files/Conctracts" + fnameCount);
+        FileWriter fw;
+        file.createNewFile();
+        fw = new FileWriter(file);
+        BufferedWriter bWrite = new BufferedWriter(fw);*/
+
+        String rentalsOut = "";
+
+        String s = rental_contract + "\n" + honolulu_car_rental + "\n" + car;
+        System.out.println(s);
+        //bWrite.write(rentalsOut);
+        //file.write(s);
+        //fw.close();
+
+
+
+        fnameCount++;
     }
 }
