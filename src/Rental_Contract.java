@@ -6,14 +6,13 @@ public class Rental_Contract {
     int maxKm;
     int registrationNumber;
 
-    public Rental_Contract(int rI, int cI, String cL, int sK, int mK, int rN){
-    renterId = rI;
-    companyId = cI;
-    contractLength = cL;
-    startKm = sK;
-    maxKm = mK;
-    registrationNumber = rN;
-
+    public Rental_Contract(int rI, int cI, String cL, int sK, int mK, int rN) {
+        renterId = rI;
+        companyId = cI;
+        contractLength = cL;
+        startKm = sK;
+        maxKm = mK;
+        registrationNumber = rN;
     }
 
     @Override

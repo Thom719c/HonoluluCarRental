@@ -11,7 +11,6 @@ public class Family extends Car {
         airCondition = aC;
         cruiseControl = cC;
         seat = s;
-
     }
 
     @Override
@@ -47,5 +46,4 @@ public class Family extends Car {
     public void setSeat(int seat) {
         this.seat = seat;
     }
-
 }

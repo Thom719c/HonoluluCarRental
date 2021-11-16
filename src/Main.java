@@ -23,10 +23,10 @@ public class Main {
             input.nextLine();
             switch (honoluluCarRentalChoice) {
                 case 1:
-                    cars(carHandler);
+                    cars(carHandler, input);
                     break;
                 case 2:
-                    rentals(rentalsHandler);
+                    rentals(rentalsHandler, input);
                     break;
                 default:
                     System.out.println();
@@ -34,10 +34,7 @@ public class Main {
         }
     }
 
-    public static void cars(CarHandler carHandler) throws IOException {
-        Scanner input = new Scanner(System.in);
-
-
+    public static void cars(CarHandler carHandler, Scanner input) throws IOException {
         //Switch menu
         int carMenuChoice = 0;
         while (carMenuChoice != 6) {
@@ -67,8 +64,7 @@ public class Main {
         }
     }
 
-    public static void rentals(RentalsHandler rentalsHandler) throws IOException {
-        Scanner input = new Scanner(System.in);
+    public static void rentals(RentalsHandler rentalsHandler, Scanner input) throws IOException {
         int rentalChoice = 0;
         while (rentalChoice != 7) {
             System.out.println("Rental menu" +
@@ -90,6 +86,7 @@ public class Main {
                     //Todo Should we overwrite and create new contract if there is wrong info (case 4 change info)
                     break;
                 case 5:
+                    rentalsHandler.editCustomer(input);
                     break;
                 default:
                     System.out.println();

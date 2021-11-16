@@ -35,20 +35,19 @@ public class RentalsHandler {
         return rentals;
     }
 
-    public void showRentals(Scanner input) throws IOException {
+    public void showRentals(Scanner input) {
         System.out.println("1. Show all \n2. Private customer \n3. Company customer \n4. Exit");
         int showType = input.nextInt();
         switch (showType) {
-            case 1: //10 inputs
+            case 1:
                 for (Honolulu_Car_Rental s : rentals) {
                     System.out.println(s + "\n**************************************************");
                 }
                 break;
-            case 2: //11 inputs
+            case 2:
                 showRentalType("Private");
-
                 break;
-            case 3: //8 inputs
+            case 3:
                 showRentalType("Company");
                 break;
             default:
@@ -136,7 +135,6 @@ public class RentalsHandler {
         int crn = input.nextInt();
         boolean tester = true;
         while (tester){
-
             Matcher m = Pattern.compile("(?<!\\d)\\d{6}(?!\\d)").matcher(String.valueOf(crn)); //Matcher Class - Used to search for the pattern and Pattern Class - Defines a pattern (to be used in a search)
             if (m.find()) {
                 break;
@@ -164,8 +162,168 @@ public class RentalsHandler {
     public ArrayList<Honolulu_Car_Rental> getRentals() {
         return rentals;
     }
-
     public void setRentals(ArrayList<Honolulu_Car_Rental> rentals) {
         this.rentals = rentals;
+    }
+
+    public void editCustomer(Scanner input) throws IOException {
+        System.out.println("1. Private customer \n2. Company customer \nEnter number for which you want to change info about: ");
+        int editChoice = input.nextInt();
+        if (editChoice == 1) {
+            showEditCustomerType("Private");
+        } else {
+            showEditCustomerType("Company");
+        }
+        System.out.println("Enter number for which customer you want to change info about: ");
+        int picked = input.nextInt();
+
+        String[] strArrayPrivate = new String[9];
+        String[] strArrayCompany = new String[11];
+        String[] sArr = new String[rentals.size()];
+        Arrays.fill(sArr, "");
+
+        String s = String.valueOf(rentals.get(picked - 1));
+        String[] strArr = s.split("\n");
+        switch (rentals.get(picked - 1).customer) {
+            case "Private":
+                for (int j = 0; j < 9; j++) {
+                    sArr[picked - 1] += strArr[j] + "\n";
+                    strArrayPrivate = sArr[picked - 1].split("\n");
+                }
+                for (int i = 0; i < strArrayPrivate.length; i++) {
+                    System.out.println("Nr. " + (i + 1) + ": " + strArrayPrivate[i]);
+                    String newLastPrivate = strArrayPrivate[i].substring(strArrayPrivate[i].indexOf(": ") + 2);
+                    strArrayPrivate[i] = newLastPrivate;
+                }
+                System.out.println("Enter number for which info you want to change: ");
+                int pickInfoP = input.nextInt();
+                input.nextLine();
+                switch (pickInfoP) {
+                    case 1:
+                        System.out.println("Enter new driver name: ");
+                        strArrayPrivate[0] = input.nextLine();
+                        break;
+                    case 2:
+                        System.out.println("Enter new address: ");
+                        strArrayPrivate[1] = input.nextLine();
+                        break;
+                    case 3:
+                        System.out.println("Enter zip code: ");
+                        strArrayPrivate[2] = String.valueOf(input.nextInt());
+                        break;
+                    case 4:
+                        System.out.println("Enter new city: ");
+                        strArrayPrivate[3] = input.nextLine();
+                        break;
+                    case 5:
+                        System.out.println("Enter new mobile phone: ");
+                        strArrayPrivate[4] = String.valueOf(input.nextInt());
+                        break;
+                    case 6:
+                        System.out.println("Enter new phone: ");
+                        strArrayPrivate[5] = String.valueOf(input.nextInt());
+                        break;
+                    case 7:
+                        System.out.println("Enter new email: ");
+                        strArrayPrivate[6] = input.nextLine();
+                        break;
+                    case 8:
+                        System.out.println("Enter new driver license number: ");
+                        strArrayPrivate[7] = String.valueOf(input.nextInt());
+                        break;
+                    case 9:
+                        System.out.println("Enter new issued license date: ");
+                        strArrayPrivate[8] = input.next();
+                        break;
+                }
+                Honolulu_Car_Rental privateRental = new Private_Rentals("Private", strArrayPrivate[0], strArrayPrivate[1], Integer.parseInt(strArrayPrivate[2]), strArrayPrivate[3],
+                        Integer.parseInt(strArrayPrivate[4]), Integer.parseInt(strArrayPrivate[5]), strArrayPrivate[6], Integer.parseInt(strArrayPrivate[7]), strArrayPrivate[8]);
+                rentals.set(picked - 1, privateRental);
+                break;
+            case "Company":
+                for (int j = 0; j < 11; j++) {
+                    sArr[picked - 1] += strArr[j] + "\n";
+                    strArrayCompany = sArr[picked - 1].split("\n");
+                }
+                for (int i = 0; i < strArrayCompany.length; i++) {
+                    System.out.println("Nr. " + (i + 1) + ": " + strArrayCompany[i]);
+                    String newLastCompany = strArrayCompany[i].substring(strArrayCompany[i].indexOf(": ") + 2);
+                    strArrayCompany[i] = newLastCompany;
+                }
+                System.out.println("Enter number for which info you want to change: ");
+                int pickInfoC = input.nextInt();
+                input.nextLine();
+                switch (pickInfoC) {
+                    case 1:
+                        System.out.println("Enter new driver name: ");
+                        strArrayCompany[0] = input.nextLine();
+                        break;
+                    case 2:
+                        System.out.println("Enter new address: ");
+                        strArrayCompany[1] = input.nextLine();
+                        break;
+                    case 3:
+                        System.out.println("Enter zip code: ");
+                        strArrayCompany[2] = String.valueOf(input.nextInt());
+                        break;
+                    case 4:
+                        System.out.println("Enter new city: ");
+                        strArrayCompany[3] = input.nextLine();
+                        break;
+                    case 5:
+                        System.out.println("Enter new mobile phone: ");
+                        strArrayCompany[4] = String.valueOf(input.nextInt());
+                        break;
+                    case 6:
+                        System.out.println("Enter new phone: ");
+                        strArrayCompany[5] = String.valueOf(input.nextInt());
+                        break;
+                    case 7:
+                        System.out.println("Enter new email: ");
+                        strArrayCompany[6] = input.nextLine();
+                        break;
+                    case 8:
+                        System.out.println("Enter new company name: ");
+                        strArrayCompany[7] = input.nextLine();
+                        break;
+                    case 9:
+                        System.out.println("Enter new company address: ");
+                        strArrayCompany[8] = input.nextLine();
+                        break;
+                    case 10:
+                        System.out.println("Enter new company phone number: ");
+                        strArrayCompany[9] = String.valueOf(input.nextInt());
+                        break;
+                    case 11:
+                        System.out.println("Enter new Company registration number (6 digits): ");
+                        //strArrayCompany[10] = String.valueOf(input.nextInt());
+                        int crn = input.nextInt();
+                        boolean tester = true;
+                        while (tester){
+                            Matcher m = Pattern.compile("(?<!\\d)\\d{6}(?!\\d)").matcher(String.valueOf(crn)); //Matcher Class - Used to search for the pattern and Pattern Class - Defines a pattern (to be used in a search)
+                            if (m.find()) {
+                                break;
+                            } else {
+                                System.out.println("Not valid! try again (6 digits number)! ");
+                                crn = input.nextInt();
+                            }
+                        }
+                        strArrayCompany[10] = String.valueOf(crn);
+                        break;
+                }
+                Honolulu_Car_Rental companyRental = new Company_Rentals("Company", strArrayCompany[0], strArrayCompany[1], Integer.parseInt(strArrayCompany[2]), strArrayCompany[3],
+                        Integer.parseInt(strArrayCompany[4]), Integer.parseInt(strArrayCompany[5]), strArrayCompany[6], strArrayCompany[7], strArrayCompany[8], Integer.parseInt(strArrayCompany[9]), Integer.parseInt(strArrayCompany[10]));
+                rentals.set(picked - 1, companyRental);
+                break;
+        }
+        FileProcessor.writeToRentalFile(rentals);
+    }
+
+    public void showEditCustomerType(String rentalType) {
+        for (Honolulu_Car_Rental r : rentals) {
+            if (r.customer.equals(rentalType)) {
+                System.out.printf("Nr. %-2d: %s %s \n", rentals.indexOf(r) + 1, r.driverName, r.email);
+            }
+        }
     }
 }

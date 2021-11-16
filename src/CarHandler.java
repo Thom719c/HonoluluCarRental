@@ -204,11 +204,14 @@ public class CarHandler {
         System.out.println("1. Family \n2. Luxury \n3. Sport \nEnter number for which you want to change info about: ");
         int editChoice = input.nextInt();
         if (editChoice == 1) {
-            showCarType("Family");
+            //showCarType("Family");
+            showEditCarType("Family");
         } else if (editChoice == 2) {
-            showCarType("Luxury");
+            //showCarType("Luxury");
+            showEditCarType("Luxury");
         } else {
-            showCarType("Sport");
+            //showCarType("Sport");
+            showEditCarType("Sport");
         }
         System.out.println("Enter number for which car you want to change info about: ");
         int picked = input.nextInt();
@@ -269,8 +272,14 @@ public class CarHandler {
                         strArrayFamily[7] = input.nextLine();
                         break;
                     case 9:
-                        System.out.println("Enter new seats (>=7): ");
-                        strArrayFamily[8] = String.valueOf(input.nextInt());
+                        System.out.println("Enter new seats (Min. 7): ");
+                        int seat = input.nextInt();
+                        strArrayFamily[8] = String.valueOf(seat);
+                        while (seat < 7) {
+                            System.out.println("Invalid number of seats" + "\nEnter how many seats (Min. 7): ");
+                            seat = input.nextInt();
+                            strArrayFamily[8] = String.valueOf(seat);
+                        }
                         break;
                 }
                 Car familyCar = new Family("Family", strArrayFamily[0], strArrayFamily[1], strArrayFamily[2], strArrayFamily[3], Integer.parseInt(strArrayFamily[4]),
@@ -309,7 +318,7 @@ public class CarHandler {
                         break;
                     case 5:
                         System.out.println("Enter new odometer: ");
-                        strArrayFamily[4] = String.valueOf(input.nextInt());
+                        strArrayLuxury[4] = String.valueOf(input.nextInt());
                         break;
                     case 6:
                         System.out.println("Enter new ccm: ");
@@ -386,5 +395,13 @@ public class CarHandler {
                 break;
         }
         FileProcessor.writeToCarFile(cars);
+    }
+
+    public void showEditCarType(String carType) {
+        for (Car s : cars) {
+            if (s.type.equals(carType)) {
+                System.out.printf("Nr. %-2d: %s %s \n", cars.indexOf(s) + 1, s.brand, s.model);
+            }
+        }
     }
 }
