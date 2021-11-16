@@ -53,7 +53,6 @@ public class RentalsHandler {
             default:
         }
     }
-
     public void showRentalType(String rentalType) {
         int tempI = 1;
         for (Honolulu_Car_Rental s : rentals) {
