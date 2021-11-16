@@ -85,7 +85,7 @@ public class Main {
                     break;
                 case 4:
                     //Todo Should we overwrite and create new contract if there is wrong info (case 4 change info)
-                    contractHandler.contractHandler();
+                    contractHandler.contractHandler(input);
                     break;
                 case 5:
                     rentalsHandler.editCustomer(input);
