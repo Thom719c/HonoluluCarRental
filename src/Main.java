@@ -5,15 +5,16 @@ public class Main {
     public static void main(String[] args) throws IOException {
         CarHandler carHandler = new CarHandler();
         RentalsHandler rentalsHandler = new RentalsHandler();
+        ContractHandler contractHandler = new ContractHandler();
         //carHandler.createCars();
         //rentalsHandler.createRentals();
         FileProcessor.updateCarArrayList(carHandler.getCars());
         FileProcessor.updateRentalArrayList(rentalsHandler.getRentals());
 
-        runHonoluluCarRentalProgram(carHandler, rentalsHandler);
+        runHonoluluCarRentalProgram(carHandler, rentalsHandler, contractHandler);
     }
 
-    public static void runHonoluluCarRentalProgram(CarHandler carHandler, RentalsHandler rentalsHandler) throws IOException {
+    public static void runHonoluluCarRentalProgram(CarHandler carHandler, RentalsHandler rentalsHandler, ContractHandler contractHandler) throws IOException {
         Scanner input = new Scanner(System.in);
         int honoluluCarRentalChoice = 0;
         while (honoluluCarRentalChoice != 3) {
@@ -26,7 +27,7 @@ public class Main {
                     cars(carHandler, input);
                     break;
                 case 2:
-                    rentals(rentalsHandler, input);
+                    rentals(rentalsHandler, input, contractHandler);
                     break;
                 default:
                     System.out.println();
@@ -64,7 +65,7 @@ public class Main {
         }
     }
 
-    public static void rentals(RentalsHandler rentalsHandler, Scanner input) throws IOException {
+    public static void rentals(RentalsHandler rentalsHandler, Scanner input, ContractHandler contractHandler) throws IOException {
         int rentalChoice = 0;
         while (rentalChoice != 7) {
             System.out.println("Rental menu" +
@@ -84,6 +85,7 @@ public class Main {
                     break;
                 case 4:
                     //Todo Should we overwrite and create new contract if there is wrong info (case 4 change info)
+                    contractHandler.contractHandler();
                     break;
                 case 5:
                     rentalsHandler.editCustomer(input);

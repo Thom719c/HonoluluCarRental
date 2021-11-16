@@ -15,6 +15,7 @@ public class Rental_Contract {
         registrationNumber = rN;
     }
 
+
     @Override
     public String toString() {
         return ("renterId " + renterId + "\ncompanyId " + companyId + "\ncontractLength " + contractLength +
