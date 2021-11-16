@@ -4,9 +4,9 @@ public class Rental_Contract {
     String contractLength; //  from-date&time, to-date&time
     int startKm;
     int maxKm;
-    int registrationNumber;
+    String registrationNumber;
 
-    public Rental_Contract(int rI, int cI, String cL, int sK, int mK, int rN) {
+    public Rental_Contract(int rI, int cI, String cL, int sK, int mK, String rN) {
         renterId = rI;
         companyId = cI;
         contractLength = cL;

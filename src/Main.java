@@ -27,7 +27,7 @@ public class Main {
                     cars(carHandler, input);
                     break;
                 case 2:
-                    rentals(rentalsHandler, input, contractHandler);
+                    rentals(input, rentalsHandler, contractHandler, carHandler);
                     break;
                 default:
                     System.out.println();
@@ -65,7 +65,7 @@ public class Main {
         }
     }
 
-    public static void rentals(RentalsHandler rentalsHandler, Scanner input, ContractHandler contractHandler) throws IOException {
+    public static void rentals(Scanner input, RentalsHandler rentalsHandler, ContractHandler contractHandler, CarHandler carHandler) throws IOException {
         int rentalChoice = 0;
         while (rentalChoice != 7) {
             System.out.println("Rental menu" +
@@ -85,7 +85,7 @@ public class Main {
                     break;
                 case 4:
                     //Todo Should we overwrite and create new contract if there is wrong info (case 4 change info)
-                    contractHandler.contractHandler(input);
+                    contractHandler.contractHandler(input, carHandler, rentalsHandler);
                     break;
                 case 5:
                     rentalsHandler.editCustomer(input);
