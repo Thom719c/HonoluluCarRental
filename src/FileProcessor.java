@@ -152,7 +152,7 @@ public class FileProcessor {
         file.write(s);
         fw.close();*/
         PrintStream ps = new PrintStream(new File("Files/Contracts/Contract.txt"));
-        ps.println("Contract " + fnameCount + "\n" + rental_contract + "\n" + honolulu_car_rental + "\n" + car);
+        ps.println("Contract " + fnameCount + "\n******************************\n" + rental_contract + "\n******************************\n\n" + "Rental information" + "\n******************************\n" + honolulu_car_rental + "\n******************************\n\n" + "Car information" + "\n******************************\n" + car + "\n******************************\n");
         ps.close();
         fnameCount++;
     }
