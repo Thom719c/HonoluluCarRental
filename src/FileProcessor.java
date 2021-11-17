@@ -137,7 +137,9 @@ public class FileProcessor {
         }
         name += ".txt";
         PrintStream ps = new PrintStream(new File("Files/Contracts/" + name)); //PrintStream ps = new PrintStream(new File("Files/Contracts/Contract.txt"));
-        ps.println("Contract " + fnameCount + "\n******************************\n" + rental_contract + "\n******************************\n\n" + "Rental information" + "\n******************************\n" + honolulu_car_rental + "\n******************************\n\n" + "Car information" + "\n******************************\n" + car + "\n******************************\n");
+        ps.println("Contract " + fnameCount + "\n******************************\n" + rental_contract + "\n******************************\n\n" +
+                "Rental information" + "\n******************************\n" + honolulu_car_rental + "\n******************************\n\n" +
+                "Car information" + "\n******************************\n" + car + "\n******************************\n");
         ps.close();
     }
 }
