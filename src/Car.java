@@ -18,6 +18,8 @@ public abstract class Car {
         odometer = o;
 
     }
+
+    @Override
     public String toString(){
         return("brand: " + brand + "\nmodel: " + model + "\nfuel type: " + fuelType
                 + "\nregistration: " + registration + "\nodometer: " + odometer);
