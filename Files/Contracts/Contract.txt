@@ -1,36 +1,36 @@
 Contract 1
 ******************************
-renterId 1
-companyId 1
-contractLength 12-12
-startKm 5000
-maxKm 20000
+renterId 12
+companyId 12
+contractLength 16/11/2021-28/11/2021
+startKm 13000
+maxKm 38000
 registrationNumber 
 ******************************
 
 Rental information
 ******************************
-driver name: Josh
-address: Nybobvej
-zipcode: 2500
-city: Valby
-mobile phone: 45678798
-phone: 13234567
-email: Joshie@gmail.com
-driver license number: 106783593
-issued license date: 6/3/2018
+driver name: Mark
+address: Vinkelvej
+zipcode: 3520
+city: Farum
+mobile phone: 99965854
+phone: 41427592
+email: Zucker@Outlook.com
+company name: Facebook
+company address: Facebook street
+company phone number: 96088113
+company registration number: 307441
 ******************************
 
 Car information
 ******************************
-brand: Toyota
-model: Proace Cyty Verso Shuttle
+brand: Ford Mustang
+model: Shelby GT500R Eleanor
 fuel type: Benzin
-registration: 06-2021
-odometer: 5000
-manual gear: 5. gear manual
-air condition: Yes
-cruise control: Yes
-seats: 7
+registration: 12/1967
+odometer: 13000
+manualGear: Yes
+HP: 550
 ******************************
 

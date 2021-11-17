@@ -1,0 +1,36 @@
+Contract 2
+******************************
+renterId 10
+companyId 10
+contractLength 2
+startKm 171000
+maxKm 171002
+registrationNumber 
+******************************
+
+Rental information
+******************************
+driver name: Ethan
+address: Frederiksberg allé
+zipcode: 2000
+city: Frederiksberg
+mobile phone: 98460575
+phone: 68840780
+email: Ethanol@Outlook.com
+driver license number: 493666905
+issued license date: 16/8/2009
+******************************
+
+Car information
+******************************
+brand: Toyota
+model: Verso
+fuel type: Diesel
+registration: 02/2012
+odometer: 171000
+manual gear: Yes
+air condition: Yes
+cruise control: Yes
+seats: 7
+******************************
+

@@ -126,34 +126,18 @@ public class FileProcessor {
     }
 
     public static void writeContractFile(Rental_Contract rental_contract, Honolulu_Car_Rental honolulu_car_rental, Car car) throws IOException {
+        String name = "Contract";
         int fnameCount = 1;
-        /*
-        try {
-            File file = new File("Files/Contracts/Contract.txt" + fnameCount);
-            file.createNewFile();
-            FileWriter fw = new FileWriter(file, false);
-            String s = rental_contract + "\n" + honolulu_car_rental + "\n" + car;
-            fw.write(s);
-            fw.close();
-        } catch (Exception e){
-            e.printStackTrace();
-        }*/
-        /*File file = new File("Files/Conctracts" + fnameCount);
-        FileWriter fw;
-        file.createNewFile();
-        fw = new FileWriter(file);
-        BufferedWriter bWrite = new BufferedWriter(fw);
 
-        String rentalsOut = "";
-
-        String s = rental_contract + "\n" + honolulu_car_rental + "\n" + car;
-        System.out.println(s);
-        bWrite.write(rentalsOut);
-        file.write(s);
-        fw.close();*/
-        PrintStream ps = new PrintStream(new File("Files/Contracts/Contract.txt"));
+        if (new File(name + ".txt").exists()) {
+            while (new File(name + fnameCount + ".txt").exists()) {
+                fnameCount++;
+            }
+            name += "" + fnameCount;
+        }
+        name += ".txt";
+        PrintStream ps = new PrintStream(new File("Files/Contracts/" + name)); //PrintStream ps = new PrintStream(new File("Files/Contracts/Contract.txt"));
         ps.println("Contract " + fnameCount + "\n******************************\n" + rental_contract + "\n******************************\n\n" + "Rental information" + "\n******************************\n" + honolulu_car_rental + "\n******************************\n\n" + "Car information" + "\n******************************\n" + car + "\n******************************\n");
         ps.close();
-        fnameCount++;
     }
 }
