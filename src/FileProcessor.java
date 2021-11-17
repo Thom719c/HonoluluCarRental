@@ -128,18 +128,25 @@ public class FileProcessor {
     public static void writeContractFile(Rental_Contract rental_contract, Honolulu_Car_Rental honolulu_car_rental, Car car) throws IOException {
         String name = "Contract";
         int fnameCount = 1;
+        String stars = "\n******************************";
 
-        if (new File(name + ".txt").exists()) {
-            while (new File(name + fnameCount + ".txt").exists()) {
+        if (new File("Files/Contracts/" + name + ".txt").exists()) {
+            while (new File("Files/Contracts/"+ name + fnameCount + ".txt").exists()) {
                 fnameCount++;
             }
             name += "" + fnameCount;
         }
         name += ".txt";
         PrintStream ps = new PrintStream(new File("Files/Contracts/" + name)); //PrintStream ps = new PrintStream(new File("Files/Contracts/Contract.txt"));
+        /*
         ps.println("Contract " + fnameCount + "\n******************************\n" + rental_contract + "\n******************************\n\n" +
                 "Rental information" + "\n******************************\n" + honolulu_car_rental + "\n******************************\n\n" +
                 "Car information" + "\n******************************\n" + car + "\n******************************\n");
+        */
+        ps.printf("Contract %d \n%s %s \nRental information \n%s %s \nCar information \n%s %s", fnameCount, rental_contract, stars, honolulu_car_rental, stars, car, stars);
+
+        //System.out.print("\033[0;1m" + name);
+
         ps.close();
     }
 }
