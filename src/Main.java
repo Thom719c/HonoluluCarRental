@@ -40,8 +40,8 @@ public class Main {
         int carMenuChoice = 0;
         while (carMenuChoice != 6) {
             System.out.println("Car menu" +
-                    "\n1. Show Catalog \n2. Add car \n3. Remove car \n4. Search for car " +
-                    "\n5. Change info \n6. For exit" + "\nIndtast nummer: ");
+                    "\n1. Show Catalog \n2. Add car \n3. Remove car" +
+                    "\n4. Change info \n6. For exit" + "\nIndtast nummer: ");
             carMenuChoice = input.nextInt();
             input.nextLine();
             switch (carMenuChoice) {
@@ -55,8 +55,6 @@ public class Main {
                     carHandler.removeCar(input);
                     break;
                 case 4:
-                    break;
-                case 5:
                     carHandler.editCar(input);
                     break;
                 default:
@@ -67,10 +65,10 @@ public class Main {
 
     public static void rentals(Scanner input, RentalsHandler rentalsHandler, ContractHandler contractHandler, CarHandler carHandler) throws IOException {
         int rentalChoice = 0;
-        while (rentalChoice != 7) {
+        while (rentalChoice != 6) {
             System.out.println("Rental menu" +
                     "\n1.show rentals \n2. Add rentals \n3. Remove rentals \n4. Create contract " +
-                    "\n5. Change info \n6. Search after contract \n7. For exit" + "\nIndtast nummer: ");
+                    "\n5. Change info \n6. For exit" + "\nIndtast nummer: ");
             rentalChoice = input.nextInt();
             input.nextLine();
             switch (rentalChoice) {
