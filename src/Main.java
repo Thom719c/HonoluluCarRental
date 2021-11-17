@@ -38,10 +38,10 @@ public class Main {
     public static void cars(CarHandler carHandler, Scanner input) throws IOException {
         //Switch menu
         int carMenuChoice = 0;
-        while (carMenuChoice != 6) {
+        while (carMenuChoice != 5) {
             System.out.println("Car menu" +
                     "\n1. Show Catalog \n2. Add car \n3. Remove car" +
-                    "\n4. Change info \n6. For exit" + "\nIndtast nummer: ");
+                    "\n4. Change info \n5. For exit" + "\nIndtast nummer: ");
             carMenuChoice = input.nextInt();
             input.nextLine();
             switch (carMenuChoice) {
