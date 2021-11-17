@@ -16,7 +16,6 @@ public abstract class Car {
         fuelType = fT;
         registration = r;
         odometer = o;
-
     }
 
     @Override
