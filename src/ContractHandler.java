@@ -23,8 +23,8 @@ public class ContractHandler {
         System.out.println("Enter Company ID: ");
         int companyId = input.nextInt();
         System.out.println("Enter contract length: ");
-        String contractLength = input.nextLine();
         input.nextLine();
+        String contractLength = input.nextLine();
         System.out.println("Enter max km: ");
         int maxKm = input.nextInt();
         System.out.println("Enter registration number: ");

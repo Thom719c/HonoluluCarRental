@@ -127,8 +127,9 @@ public class FileProcessor {
 
     public static void writeContractFile(Rental_Contract rental_contract, Honolulu_Car_Rental honolulu_car_rental, Car car) throws IOException {
         int fnameCount = 1;
+        /*
         try {
-            File file = new File("Files/Contracts" + fnameCount);
+            File file = new File("Files/Contracts/Contract.txt" + fnameCount);
             file.createNewFile();
             FileWriter fw = new FileWriter(file, false);
             String s = rental_contract + "\n" + honolulu_car_rental + "\n" + car;
@@ -136,8 +137,7 @@ public class FileProcessor {
             fw.close();
         } catch (Exception e){
             e.printStackTrace();
-        }
-
+        }*/
         /*File file = new File("Files/Conctracts" + fnameCount);
         FileWriter fw;
         file.createNewFile();
@@ -151,7 +151,9 @@ public class FileProcessor {
         bWrite.write(rentalsOut);
         file.write(s);
         fw.close();*/
-
+        PrintStream ps = new PrintStream(new File("Files/Contracts/Contract.txt"));
+        ps.println("Contract " + fnameCount + "\n" + rental_contract + "\n" + honolulu_car_rental + "\n" + car);
+        ps.close();
         fnameCount++;
     }
 }

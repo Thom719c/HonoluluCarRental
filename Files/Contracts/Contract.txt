@@ -1,0 +1,25 @@
+Contract 1
+renterId 1
+companyId 1
+contractLength 1
+startKm 5000
+maxKm 5001
+registrationNumber 
+driver name: Josh
+address: Nybobvej
+zipcode: 2500
+city: Valby
+mobile phone: 45678798
+phone: 13234567
+email: Joshie@gmail.com
+driver license number: 106783593
+issued license date: 6/3/2018
+brand: Toyota
+model: Proace Cyty Verso Shuttle
+fuel type: Benzin
+registration: 06-2021
+odometer: 5000
+manual gear: 5. gear manual
+air condition: Yes
+cruise control: Yes
+seats: 7
